@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+{% load compress %} {% load static %}
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Learning</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="" />
+  </head>
+  {% compress css %}
+  <link rel="stylesheet" href="{% static 'src/output.css' %}" />
+  {% endcompress %}
+  <body>
+    <header
+      class="bg-white w-screen border-b border-black flex justify-baseline"
+    >
+      <div>
+        <img
+          src="/static/adero_logo.svg"
+          alt="Adero Logo"
+          class="h-20 w-24 m-r-12"
+        />
+      </div>
+
+      <div class="inline bg-cyan-900 flex flex-1 justify-end items-center">
+        <a href="#"><span>Home</span></a>
+        <a href="#"><span>Services</span></a>
+        <a href="#"><span>About</span></a>
+        <a href="#"><span>FAQ</span></a>
+      </div>
+      <button class="border border-black rounded-lg h-12 w-24">
+        Talk to us
+      </button>
+    </header>
+
+    <div class="container hover:bg-cyan-900 px-10">Hello Its me again</div>
+    {% comment %}
+    <iframe
+      style="border: 1px solid rgba(0, 0, 0, 0.1)"
+      width="800"
+      height="450"
+      src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fproto%2FIORCqDUhmdixdIu5QGyLo9%2FAdero-Site%3Fpage-id%3D1%253A3%26node-id%3D19-17%26viewport%3D778%252C861%252C0.34%26t%3Dl0oFuf6WUhtG3Fk8-1%26scaling%3Dscale-down"
+      allowfullscreen
+    ></iframe>
+    {% endcomment %}
+
+    <script src="" async defer></script>
+  </body>
+</html>
