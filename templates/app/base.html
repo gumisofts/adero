@@ -18,7 +18,7 @@
     <link rel="stylesheet" href="{% static 'src/output.css' %}" />
     {% endcompress %}
   </head>
-  <body>
+  <body class="mt-0 ml-0">
     <!--[if lt IE 7]>
       <p class="browsehappy">
         You are using an <strong>outdated</strong> browser. Please
@@ -26,8 +26,110 @@
       </p>
     <![endif]-->
 
+    <header
+      class="px-4 py-1 flex width-full border-b border-black items-center justify-evenly fixed top-0 left-0 right-0 backdrop-blur-sm z-50"
+    >
+      <img src="static/adero_logo.svg" alt="adero_logo" class="w-44 h-16" />
+      <ul class="flex grow gap-x-4 ml-12 items-baseline">
+        <li>
+          <a href="#"
+            ><span
+              class="text-secondary font-semibold text-lg hover:text-primary visited:text-primary duration-300 hover:text-xl ease-out"
+            ></span
+          ></a>
+        </li>
+        <li>
+          <a href="#"
+            ><span
+              class="text-secondary font-semibold text-lg hover:text-primary visited:text-primary duration-300 hover:text-xl ease-out"
+              >Home</span
+            ></a
+          >
+        </li>
+        <li>
+          <a href="#"
+            ><span
+              class="text-secondary font-semibold text-lg hover:text-primary visited:text-primary duration-300 hover:text-xl ease-out"
+              >Services</span
+            ></a
+          >
+        </li>
+        <li>
+          <a href="#"
+            ><span
+              class="text-secondary font-semibold text-lg hover:text-primary visited:text-primary duration-300 hover:text-xl ease-out"
+              >About</span
+            ></a
+          >
+        </li>
+        <li>
+          <a href="#"
+            ><span
+              class="text-secondary font-semibold text-lg hover:text-primary visited:text-primary duration-300 hover:text-xl ease-out"
+              >Career</span
+            ></a
+          >
+        </li>
+        <li>
+          <a href="#"
+            ><span
+              class="text-secondary font-semibold text-lg hover:text-primary visited:text-primary duration-300 hover:text-xl ease-out"
+              >FAQ</span
+            ></a
+          >
+        </li>
+      </ul>
+      <button
+        class="border border-primary border-2 rounded-lg px-6 py-2 font-bold text-secondary text-xl hover:bg-primary duration-700 hover:text-white hover:scale-105"
+      >
+        Talk to us
+      </button>
+    </header>
     {% block content %} {% endblock content %}
-
+    <footer class="border-t border-black">
+      <div class="flex justify-around p-4">
+        <div class="flex flex-col justify-between w-96">
+          <img src="static/adero_logo.svg" alt="logo" class="w-44 h-16" />
+          <p>
+            Adero Tech is an East African internet company headquartered in
+            Addis Ababa, Ethiopia. This organization encompasses the entirety of
+            the digital realm and all things online-related. From completing
+            passport applications to large scale Software, Adero technology
+            encompasses everything digital and online.
+          </p>
+        </div>
+        <div class="">
+          <h2 class="font-bold text-secondary">Services</h2>
+          <ul>
+            <li><a href="#">Applictaion Development</a></li>
+            <li><a href="#">Testing and QA</a></li>
+            <li><a href="#">Online Jobs</a></li>
+            <li><a href="#">Canada Visa Processing</a></li>
+          </ul>
+        </div>
+        <div class="">
+          <h2 class="font-bold text-secondary">Services</h2>
+          <ul>
+            <li><a href="#">Applictaion Development</a></li>
+            <li><a href="#">Testing and QA</a></li>
+            <li><a href="#">Online Jobs</a></li>
+            <li><a href="#">Canada Visa Proces</a></li>
+          </ul>
+        </div>
+        <div class="">
+          <h2 class="font-bold text-secondary">Links</h2>
+          <ul>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><a href="#">Career</a></li>
+            <li><a href="#">FAQ</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="flex justify-center">
+        <h1 class="font-semibold text-secondary">©2024 AderoTech</h1>
+      </div>
+    </footer>
     <script src="" async defer></script>
   </body>
 </html>
