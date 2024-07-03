@@ -4,7 +4,7 @@
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
 {%load compress%} {% load static %}
-<html class="scroll-smooth">
+<html class="scroll-smooth bg-transparant">
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -17,8 +17,16 @@
     {% compress css %}
     <link rel="stylesheet" href="{% static 'src/output.css' %}" />
     {% endcompress %}
+
   </head>
-  <body class="mt-0 ml-0 pt-20">
+  <body class="mt-0 ml-0 pt-20" id="body" style="display:none">
+    <script type="text/javascript">
+      window.onload = function () {
+          setTimeout(function() {
+              document.getElementById("body").style.display = "";        
+          }, 200);
+      }
+  </script>
     <!--[if lt IE 7]>
       <p class="browsehappy">
         You are using an <strong>outdated</strong> browser. Please
@@ -135,6 +143,7 @@
         <h1 class="font-semibold text-secondary">©2024 AderoTech</h1>
       </div>
     </footer>
+    
     <script src="" async defer></script>
   </body>
 </html>
