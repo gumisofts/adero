@@ -776,6 +776,14 @@ video {
   height: 100dvh;
 }
 
+.h-1\/2 {
+  height: 50%;
+}
+
+.h-3\/5 {
+  height: 60%;
+}
+
 .w-11 {
   width: 2.75rem;
 }
@@ -859,6 +867,14 @@ video {
   flex-direction: column;
 }
 
+.content-center {
+  align-content: center;
+}
+
+.content-between {
+  align-content: space-between;
+}
+
 .items-start {
   align-items: flex-start;
 }
@@ -926,6 +942,11 @@ video {
   row-gap: 1.5rem;
 }
 
+.gap-x-10 {
+  -moz-column-gap: 2.5rem;
+       column-gap: 2.5rem;
+}
+
 .space-y-2 > :not([hidden]) ~ :not([hidden]) {
   --tw-space-y-reverse: 0;
   margin-top: calc(0.5rem * calc(1 - var(--tw-space-y-reverse)));
@@ -950,6 +971,10 @@ video {
   overflow-y: auto;
 }
 
+.scroll-smooth {
+  scroll-behavior: smooth;
+}
+
 .rounded-3xl {
   border-radius: 1.5rem;
 }
@@ -960,6 +985,10 @@ video {
 
 .rounded-md {
   border-radius: 0.375rem;
+}
+
+.rounded-2xl {
+  border-radius: 1rem;
 }
 
 .border {
@@ -1185,6 +1214,22 @@ video {
   padding-right: 0.875rem;
 }
 
+.pt-6 {
+  padding-top: 1.5rem;
+}
+
+.pt-10 {
+  padding-top: 2.5rem;
+}
+
+.pt-12 {
+  padding-top: 3rem;
+}
+
+.pt-20 {
+  padding-top: 5rem;
+}
+
 .text-2xl {
   font-size: 1.5rem;
   line-height: 2rem;
@@ -1380,6 +1425,11 @@ video {
 .hover\:text-xl:hover {
   font-size: 1.25rem;
   line-height: 1.75rem;
+}
+
+.hover\:text-2xl:hover {
+  font-size: 1.5rem;
+  line-height: 2rem;
 }
 
 .hover\:text-cyan-500:hover {
