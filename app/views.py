@@ -19,4 +19,4 @@ def faq(request):
 
 
 def test(request):
-    return render(request, "app/test.html")
+    return render(request, "app/index2.html")
