@@ -5,3 +5,4 @@ CACHE/
 tmp/
 stderr.log
 *.Identifier
+medias/

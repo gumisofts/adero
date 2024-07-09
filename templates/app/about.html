@@ -1,1 +1,31 @@
-{% extends "base.html" %}
+{% extends "base.html" %} {% block content %}
+
+<section class="flex flex-col items-center">
+  <h1 class="text-6xl font-bold text-secondary">Who are we?</h1>
+
+  <p class="text-2xl w-5/6 p-4 text-center">
+    We are Aderoo Tech an East African internet company headquartered in Addis
+    Ababa, Ethiopia. We encompasses the entirety of the digital realm and all
+    things online-related. From completing passport applications to large scale
+    Softwares, Aderoo technology encompasses everything digital and online.
+  </p>
+</section>
+
+<section class="flex flex-col items-center">
+  <h1 class="text-6xl font-bold text-secondary">Our Services</h1>
+
+  <div class="grid grid-cols-3 gap-4 w-screen justify-around p-6">
+    {% for service in services %}
+    <div class="bg-secondary rounded-md">
+      <img src="{{service.img.url}}" alt="" class="object-cover rounded-t-md" />
+      <div class="text-2xl text-white p-4">
+        <h1 class="">{{service.name}}</h1>
+        <p class="text-lg text-gray-400">{{service.detail}}</p>
+      </div>
+    </div>
+    {% endfor %}
+   
+    </div>
+  </div>
+</section>
+{% endblock content %}

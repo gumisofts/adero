@@ -11,6 +11,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = ["localhost", "adero.gumiapps.com", "adero.tech"]
 
+AUTH_USER_MODEL = "app.User"
 
 INSTALLED_APPS = [
     "django.contrib.admin",
@@ -97,6 +98,8 @@ USE_TZ = True
 
 
 STATIC_URL = "static/"
+MEDIA_ROOT = "medias/"
+MEDIA_URL = "/medias/"
 
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"

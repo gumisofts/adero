@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from .models import *
 
 
 # Create your views here.
@@ -7,7 +8,8 @@ def home(request):
 
 
 def about(request):
-    return render(request, "app/about.html")
+    services = Service.objects.all()
+    return render(request, "app/about.html", context={"services": services})
 
 
 def career(request):
