@@ -97,7 +97,7 @@ USE_I18N = True
 USE_TZ = True
 
 
-STATIC_URL = "/statics/"
+STATIC_URL = "/static/"
 MEDIA_ROOT = "medias/"
 
 MEDIA_URL = "/medias/"
