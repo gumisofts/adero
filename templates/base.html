@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
@@ -16,10 +15,11 @@
     <link rel="apple-touch-icon" sizes="180x180" href="static/images/fav/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="static/images/fav/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="static/images/fav/favicon-16x16.png">
-    <link rel="manifest" href="/site.webmanifest">
+    <link rel="manifest" href="static/manifest.json" />
+
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     {% compress css %}
-    <link rel="stylesheet" href="{% static 'src/output.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/output.css' %}" />
     {% endcompress %}
 
   </head>
