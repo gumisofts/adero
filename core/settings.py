@@ -97,10 +97,10 @@ USE_I18N = True
 USE_TZ = True
 
 
-STATIC_URL = "static/"
-MEDIA_ROOT = "medias/"
+STATIC_URL = "/medias.gumiapps.com/static/"
 
-MEDIA_URL = "medias/"
+MEDIA_ROOT = "/medias.gumiapps.com/medias/"
 
+MEDIA_URL = "https://medias.gumiapps.com/"
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"

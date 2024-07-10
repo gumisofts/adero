@@ -6,9 +6,9 @@ from app.views import *
 
 urlpatterns = [
     path("", home),
-    path("about", about),
-    path("careers", career),
-    path("faq", faq),
-    path("admin", admin.site.urls),
-    path("test", test),
+    path("about/", about),
+    path("careers/", career),
+    path("faq/", faq),
+    path("admin/", admin.site.urls),
+    path("test/", test),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
