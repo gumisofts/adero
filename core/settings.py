@@ -104,6 +104,6 @@ STATIC_ROOT = "../medias.gumiapps.com/static/"
 
 MEDIA_ROOT = "../medias.gumiapps.com/medias/"
 
-MEDIA_URL = "https://medias.gumiapps.com/"
+MEDIA_URL = "https://medias.gumiapps.com/medias/"
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
