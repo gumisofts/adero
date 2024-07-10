@@ -96,7 +96,9 @@ USE_I18N = True
 
 USE_TZ = True
 
-
+STATICFILES_DIRS = [
+    BASE_DIR / "static",
+]
 STATIC_URL = "https://medias.gumiapps.com/static/"
 STATIC_ROOT = "../medias.gumiapps.com/static/"
 
