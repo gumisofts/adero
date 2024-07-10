@@ -36,7 +36,7 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = "core.urls"
 
-COMPRESS_ROOT = BASE_DIR / "static"
+COMPRESS_ROOT = "../medias.gumiapps.com/static"
 
 COMPRESS_ENABLED = True
 

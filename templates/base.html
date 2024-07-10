@@ -18,9 +18,9 @@
     <link rel="manifest" href="static/manifest.json" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    {% compress css %}
-    <link rel="stylesheet" href="{% static 'css/output.css' %}" />
-    {% endcompress %}
+    {% comment %} {% compress css %}
+    {% endcompress %} {% endcomment %}
+    <link rel="stylesheet" href="{% static 'https://medias.gumiapps.com/static/css/output.css' %}" />
 
   </head>
   <body class="mt-0 ml-0 pt-20" id="body" style="display:none">
@@ -369,6 +369,6 @@
       </ul>
 
     </div>
-    <script src="/static/js/main.js" async defer></script>
+    <script src="https://medias.gumiapps.com/static/js/main.js" async defer></script>
   </body>
 </html>

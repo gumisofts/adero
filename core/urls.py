@@ -11,4 +11,4 @@ urlpatterns = [
     path("faq/", faq),
     path("admin/", admin.site.urls),
     path("test/", test),
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+]
