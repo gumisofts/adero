@@ -12,16 +12,12 @@
       name="description"
       content="Aderoo Tech is an East African internet company headquartered in Addis Ababa, Ethiopia. This organisation encompasses the entirety of the digital realm and all things online-related. From completing passport applications to large scale Softwares, Aderoo technology encompasses everything digital and online."
     />
-    <link rel="apple-touch-icon" sizes="180x180" href="static/images/fav/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="static/images/fav/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="static/images/fav/favicon-16x16.png">
-    <link rel="manifest" href="static/manifest.json" />
-
+    <link rel="apple-touch-icon" sizes="180x180" href={%static "images/fav/apple-touch-icon.png"%}>
+    <link rel="icon" type="image/png" sizes="32x32" href={%static "images/fav/favicon-32x32.png"%}>
+    <link rel="icon" type="image/png" sizes="16x16" href={%static "images/fav/favicon-16x16.png"%}>
+    <link rel="manifest" href={%static "manifest.json"%} />
+    <link rel="stylesheet" href="{% static 'css/output.css' %}" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    {% comment %} {% compress css %}
-    {% endcompress %} {% endcomment %}
-    <link rel="stylesheet" href="{% static 'https://medias.gumiapps.com/static/css/output.css' %}" />
-
   </head>
   <body class="mt-0 ml-0 pt-20" id="body" style="display:none">
     <script type="text/javascript">
@@ -369,6 +365,6 @@
       </ul>
 
     </div>
-    <script src="https://medias.gumiapps.com/static/js/main.js" async defer></script>
+    <script src={%static 'js/main.js'%} async defer></script>
   </body>
 </html>
