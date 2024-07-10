@@ -98,9 +98,9 @@ USE_TZ = True
 
 
 STATIC_URL = "https://medias.gumiapps.com/static/"
-STATIC_ROOT = "/medias.gumiapps.com/static/"
+STATIC_ROOT = "../medias.gumiapps.com/static/"
 
-MEDIA_ROOT = "/medias.gumiapps.com/medias/"
+MEDIA_ROOT = "../medias.gumiapps.com/medias/"
 
 MEDIA_URL = "https://medias.gumiapps.com/"
 
