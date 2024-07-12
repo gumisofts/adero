@@ -17,13 +17,15 @@
     <link rel="icon" type="image/png" sizes="16x16" href={%static "images/fav/favicon-16x16.png"%}>
     <link rel="manifest" href={%static "images/fav/site.webmanifest"%}>
     <link rel="mask-icon" href={%static "images/fav/safari-pinned-tab.svg"%} color="#5bbad5">
-<meta name="msapplication-TileColor" content="#da532c">
-<meta name="theme-color" content="#ffffff">
-    
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+
+    {%compress css%}
     <link rel="stylesheet" href="{% static 'css/output.css' %}" />
+    {%endcompress%}
     <meta name="viewport" content="width=device-width, initial-scale=1" />
   </head>
-  <body class="mt-0 ml-0 pt-20" id="body" style="display:none">
+  <body class="mt-0 ml-0 pt-18" id="body" style="display:none">
     <script type="text/javascript">
       window.onload = function () {
           setTimeout(function() {
@@ -65,14 +67,26 @@
             ></span
           ></a>
         </li>
+
+        {% if nav_index == 0 %}
         <li>
-          <a href="/"
+          <a href="/" class="border-b-4 rounded-sm border-primary px-2 duration-300 ease-out"
+            ><span
+              class="font-semibold text-xl text-primary visited:text-primary duration-300 ease-out"
+              >Home</span
+            ></a
+          >
+        </li>
+        {% else %}
+        <li>
+          <a href="/" class="hover:border-b-4 rounded-sm border-primary px-2 duration-300 ease-out"
             ><span
               class="text-secondary font-semibold text-xl hover:text-primary visited:text-primary duration-300 ease-out"
               >Home</span
             ></a
           >
         </li>
+        {% endif %}
         <li class="group hover:cursor-pointer" id="services" onmouseout="hideServiceMenu()" onmouseover="showServiceMenu()">
           
           <a class=""
@@ -97,30 +111,67 @@
             </a
           >
         </li>
-        <li>
-          <a href="/about"
-            ><span
-              class="text-secondary font-semibold text-xl hover:text-primary visited:text-primary duration-300 ease-out"
-              >About</span
-            ></a
+
+        {% if nav_index == 2 %}
+        
+        <li class="">
+          <a href="/about" class="border-b-4 rounded-sm border-primary px-2 duration-300 ease-out"
+          ><span
+          class=" font-semibold text-xl text-primary duration-300 ease-out"
+          >About</span
+          ></a
           >
         </li>
-        <li>
-          <a href="/careers"
-            ><span
-              class="text-secondary font-semibold text-xl hover:text-primary visited:text-primary duration-300 ease-out"
-              >Careers</span
-            ></a
+        {% else %}
+        <li class="">
+          <a href="/about" class="hover:border-b-4 rounded-sm border-primary px-2 duration-300 ease-out"
+          ><span
+          class="text-secondary font-semibold text-xl hover:text-primary duration-300 ease-out"
+          >About</span
+          ></a
           >
         </li>
+        {% endif %}
+
+        {% if nav_index == 3 %}
         <li>
-          <a href="/faq"
-            ><span
-              class="text-secondary font-semibold text-xl hover:text-primary visited:text-primary duration-300 ease-out"
-              >FAQ</span
-            ></a
+          <a href="/careers" class="border-b-4 rounded-sm border-primary px-2 duration-300 ease-out"
+          ><span
+          class="font-semibold text-xl text-primary visited:text-primary duration-300 ease-out"
+          >Careers</span
+          ></a
           >
         </li>
+        {% else %}
+        <li>
+          <a href="/careers" class="hover:border-b-4 rounded-sm border-primary px-2 duration-300 ease-out"
+          ><span
+          class="text-secondary font-semibold text-xl hover:text-primary duration-300 ease-out"
+          >Careers</span
+          ></a
+          >
+        </li>
+        {% endif %}
+
+        {% if nav_index == 4 %}
+        <li>
+          <a href="/faq" class="border-b-4 rounded-sm border-primary px-2 duration-300 ease-out"
+          ><span
+          class="font-semibold text-xl text-primary visited:text-primary duration-300 ease-out"
+          >FAQ</span
+          ></a
+          >
+        </li>
+        {% else %}
+        <li>
+          <a href="/faq" class="hover:border-b-4 rounded-sm border-primary px-2 duration-300 ease-out"
+          ><span
+          class="text-secondary font-semibold text-xl hover:text-primary duration-300 ease-out"
+          >FAQ</span
+          ></a
+          >
+        </li>
+        {% endif %}
       </ul>
       <button
         class="border border-primary border-2 rounded-2xl px-6 py-2 font-bold text-secondary text-xl hover:bg-primary duration-700 hover:text-white hover:scale-105"
@@ -135,8 +186,6 @@
       <h1 class="text-6xl font-bold">Working on it...</h1>
 
     </section>
-    
-    
     {% endblock content %}
     <footer class="">
       <div class="flex justify-around px-4 py-12">
@@ -235,22 +284,22 @@
         <div class="space-y-2">
           <h2 class="font-bold text-secondary">Our Services</h2>
           <ul class="space-y-1.5">
-            <li><a href="#" class="font-semibold text-secondary px-4">Software Development</a></li>
-            <li><a href="#" class="font-semibold text-secondary px-4">IT Consultancy</a></li>
-            <li><a href="#" class="font-semibold text-secondary px-4">Education Consultancy</a></li>
-            <li><a href="#" class="font-semibold text-secondary px-4">Trainings and Courses</a></li>
-            <li><a href="#" class="font-semibold text-secondary px-4">Social Media Marketing</a></li>
-            <li><a href="#" class="font-semibold text-secondary px-4">Online Applications Processing</a></li>
+            
+            {% for item in services_list %}
+            
+            <li><a href="#" class="font-semibold text-secondary px-4 hover:underline">{{item}}</a></li>
+            
+            {% endfor %}
           </ul>
         </div>
 
         <div class="space-y-2">
           <h2 class="font-bold text-secondary">Useful Links</h2>
           <ul class="space-y-1.5">
-            <li><a href="#" class="font-semibold text-secondary px-4">About</a></li>
-            <li><a href="#" class="font-semibold text-secondary px-4">Contact</a></li>
-            <li><a href="#" class="font-semibold text-secondary px-4">Career</a></li>
-            <li><a href="#" class="font-semibold text-secondary px-4">FAQ</a></li>
+            <li><a href="#" class="font-semibold text-secondary px-4 hover:underline">About</a></li>
+            <li><a href="#" class="font-semibold text-secondary px-4 hover:underline">Contact</a></li>
+            <li><a href="#" class="font-semibold text-secondary px-4 hover:underline">Career</a></li>
+            <li><a href="#" class="font-semibold text-secondary px-4 hover:underline">FAQ</a></li>
           </ul>
         </div>
         <div class="space-y-4">

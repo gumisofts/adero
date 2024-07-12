@@ -1,18 +1,33 @@
 {% extends "base.html" %} {% block content %}
 
-<section class="flex flex-col items-center">
-  <h1 class="text-6xl font-bold text-secondary">Who are we?</h1>
-
-  <p class="text-2xl w-5/6 p-4 text-center">
+<section class="flex flex-col items-center justify-center h-full bg-[url('/static/images/bg1.svg')]">
+  <div class="col-start-1 row-start-1 bg-cyan-900 bg-opacity-80 w-full h-full absolute z-10"></div>
+  <h1 class="text-6xl font-bold text-white z-30">About Us</h1>
+  <p class="text-2xl w-5/6 p-4 text-center text-white z-30 font-semibold">
     We are Aderoo Tech an East African internet company headquartered in Addis
     Ababa, Ethiopia. We encompasses the entirety of the digital realm and all
     things online-related. From completing passport applications to large scale
     Softwares, Aderoo technology encompasses everything digital and online.
   </p>
 </section>
+<section class="flex justify-center w-screen p-4 z-20 bg-cyan-900">
 
+  <div class="flex flex-col justify-center items-center w-3/6 gap-2">
+    <h1 class="text-4xl font-bold text-secondary">Our Missions</h1>
+    {% lorem 1 b random %}
+  </div>
+  <div class="grid grid-cols-2 gap-2 w-3/6">
+
+    <div class="bg-black">1</div>
+    <div class="bg-black">2</div>
+    <div class="bg-black">3</div>
+    <div class="bg-black">4</div>
+
+  </div>
+
+</section>
 <section class="flex flex-col items-center">
-  <h1 class="text-6xl font-bold text-secondary">Our Services</h1>
+  <h1 class="text-6xl font-bold text-secondary">Meet Our Teams</h1>
 
   <div class="grid grid-cols-3 gap-4 w-screen justify-around p-6">
     {% for service in services %}
@@ -24,7 +39,21 @@
       </div>
     </div>
     {% endfor %}
-   
+    </div>
+  </div>
+</section>
+<section class="flex flex-col items-center">
+  <h1 class="text-6xl font-bold text-secondary">Our Services</h1>
+  <div class="grid grid-cols-3 gap-4 w-screen justify-around p-6">
+    {% for service in services %}
+    <div class="bg-secondary rounded-md">
+      <img src="{{service.img.url}}" alt="" class="object-cover rounded-t-md" />
+      <div class="text-2xl text-white p-4">
+        <h1 class="">{{service.name}}</h1>
+        <p class="text-lg text-gray-400">{{service.detail}}</p>
+      </div>
+    </div>
+    {% endfor %}
     </div>
   </div>
 </section>

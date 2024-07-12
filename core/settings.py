@@ -1,9 +1,13 @@
 from pathlib import Path
+import os
+from dotenv import load_dotenv
 
+load_dotenv()
 
+env = os.environ.get
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-
+LOCAL_DEV = env("LOCAL_DEV")
 SECRET_KEY = "django-insecure-b)8c^$6#(_16)_n@)kel+=8y-^_2wnkgfjtv1yb$qc9=kg=&&n"
 
 
@@ -36,7 +40,7 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = "core.urls"
 
-COMPRESS_ROOT = "../medias.gumiapps.com/static"
+COMPRESS_ROOT = "static"
 
 COMPRESS_ENABLED = True
 
@@ -99,11 +103,11 @@ USE_TZ = True
 STATICFILES_DIRS = [
     BASE_DIR / "static",
 ]
-STATIC_URL = "https://medias.gumiapps.com/static/"
-STATIC_ROOT = "../medias.gumiapps.com/static/"
+STATIC_URL = env("STATIC_URL")
+STATIC_ROOT = env("STATIC_ROOT")
 
-MEDIA_ROOT = "../medias.gumiapps.com/medias/"
+MEDIA_ROOT = env("MEDIA_ROOT", "../medias.gumiapps.com/medias/")
 
-MEDIA_URL = "https://medias.gumiapps.com/medias/"
+MEDIA_URL = env("MEDIA_URL", "medias/")
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"

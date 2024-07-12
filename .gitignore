@@ -6,3 +6,5 @@ tmp/
 stderr.log
 *.Identifier
 medias/
+.vscode/
+*.env
