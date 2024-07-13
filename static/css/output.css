@@ -1213,6 +1213,10 @@ video {
   background-image: url('https://adero.tech/staticfiles/images/bg1.svg');
 }
 
+.bg-\[url\(\'https\:\/\/adero\.tech\/staticfiles\/images\/bg_gradient\.svg\'\)\] {
+  background-image: url('https://adero.tech/staticfiles/images/bg_gradient.svg');
+}
+
 .from-primary {
   --tw-gradient-from: #219EBC var(--tw-gradient-from-position);
   --tw-gradient-to: rgb(33 158 188 / 0) var(--tw-gradient-to-position);
