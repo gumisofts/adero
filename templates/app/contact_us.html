@@ -1,0 +1,163 @@
+{% extends "base.html" %} {% block content %} {% load static %}
+<section
+	class="flex flex-col justify-center items-center h-1/2 gap-4 bg-gradient-to-bl from-[#FC466B] to-[#3F5EFB] snap-always snap-start"
+>
+{% comment %} bg-[url('/static/images/bg_pattern1.svg')] {% endcomment %}
+	<h1 class="text-4xl text-white font-bold">Contact Us</h1>
+
+	<p class="font-medium text-white">
+		Feel free to contact us any time. We will get back to you as soon as we can.
+	</p>
+</section>
+
+<section class="snap-always snap-start bg-[url('/static/images/bg5.svg')]">
+    <script defer   src={% static "js/contact_us.js" %}></script>
+	<div class="flex gap-4 p-4 w-screen backdrop-blur-md">
+		<div
+			class="grid content-start place-content-between grid-cols-2 gap-4 justify-between items-start w-1/2 p-4 rounded-md border-2 border-black backdrop-blur-md"
+		>
+			<div class="flex-col flex items-stretch">
+				<label
+					for="fullname"
+					class="block mb-2 text-sm font-medium text-gray-900"
+					>Full Name</label
+				>
+				<input
+					class="input px-4 py-2 rounded-md bg-gray-100 ring-primary ring-1 outline-primary focus:outline-double"
+					placeholder="Ahmed Ali"
+					type="text"
+					value=""
+				/>
+			</div>
+			<div class="flex-col flex items-stretch">
+				<label
+					for="email"
+					class="block mb-2 text-sm font-medium text-gray-900 justify-self-start align-self-start"
+					>Email Address</label
+				>
+
+				<input
+					class="input px-4 py-2 rounded-md bg-gray-100 ring-primary ring-1 outline-primary focus:outline-double"
+					placeholder="example@gmail.com"
+					type="email"
+					value=""
+				/>
+			</div>
+			<div class="relative inline-block text-left col-span-2">
+				<button
+					type="button"
+					class="inline-flex w-full justify-between gap-x-1.5 rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-primary hover:bg-gray-50"
+					id="service-menu-button"
+					aria-expanded="true"
+					aria-haspopup="true"
+				>
+					Service
+					<svg
+						class="-mr-1 h-5 w-5 text-gray-400"
+						viewBox="0 0 20 20"
+						fill="currentColor"
+						aria-hidden="true"
+					>
+						<path
+							fill-rule="evenodd"
+							d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
+							clip-rule="evenodd"
+						/>
+					</svg>
+				</button>
+				<div
+					class="absolute hidden l-0 z-10 mt-2 w-full items-start origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
+					role="menu"
+					id="service-dropdown"
+					aria-orientation="vertical"
+					aria-labelledby="menu-button"
+					tabindex="-1"
+				>
+					<div class="py-1" role="none">
+						<!-- Active: "bg-gray-100 text-gray-900", Not Active: "text-gray-700" -->
+
+						{% for item in services_list %}
+
+                        {% with y=forloop.counter|stringformat:"s" %}
+                        {% with id="service-item-"|add:y %}
+                        
+                        {% endwith %}
+                        
+                        {% endwith %}
+						<a
+							href="#"
+							class="block px-4 py-2 text-sm text-gray-700 service-items"
+							role="menuitem"
+							tabindex="-1"
+							id=""
+							>{{item}}</a
+						>
+                        
+
+						{% endfor %}
+
+					</div>
+				</div>
+			</div>
+			<div class="col-span-2">
+				<label
+					for="message"
+					class="block mb-2 text-sm font-medium text-gray-900"
+					>Message</label
+				>
+				<textarea
+					id="message"
+					rows="4"
+					class="block outline-primary  p-2.5 w-full h-64 text-sm text-gray-900 bg-gray-50 rounded-lg ring-1 ring-primary  focus:ring-blue-500 focus:border-blue-500"
+					placeholder="Write anything regarding the selected service..."
+				></textarea>
+			</div>
+			<button
+				type="submit"
+				class="bg-cyan-700 p-2 rounded-md text-white place-self-start"
+			>
+				Send message
+			</button>
+		</div>
+		<div class="w-1/2 p-4 flex-col flex gap-4 rounded-lg backdrop-blur-md z-20">
+			<h1 class="text-4xl font-medium">Contact Information</h1>
+			<span class=""
+				>Reach out to us by phone or visit our office whenever you like. We aim
+				to respond to all queries within 24 hours during business days. We're
+				here to assist you with any questions.</span
+			>
+			<div
+				class="flex gap-4 items-center py-2 hover:bg-gray-100 hover:opacity-50 rounded-md"
+			>
+				<img src={%static "images/icons/location.svg"%} alt="" class="size-12"
+				/>
+				<span class="text-sm font-medium">
+					<h1 class="font-medium text-secondary text-lg">Visit our office</h1>
+					Some Building,Piasa,Addis Ababa,Ethiopia.
+				</span>
+			</div>
+			<div
+				class="flex gap-4 items-center py-2 hover:bg-gray-100 hover:opacity-50 rounded-md"
+			>
+				<img src={%static "images/icons/phone_icon.svg"%} alt="" class="size-12"
+				/>
+				<span class="text-sm font-medium">
+					<h1 class="font-medium text-secondary text-lg">Give us a call</h1>
+					+251-912-609473
+				</span>
+			</div>
+			<div
+				class="flex gap-4 items-center py-2 hover:bg-gray-100 hover:opacity-50 rounded-md"
+			>
+				<img src={%static "images/icons/email_icon.svg"%} alt="" class="size-12"
+				/>
+				<span class="text-sm font-normal">
+					<h1 class="font-medium text-secondary text-lg">Email us</h1>
+					contact@adero.tech
+				</span>
+			</div>
+		</div>
+	</div>
+</section>
+
+{% endblock content %}

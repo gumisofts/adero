@@ -8,3 +8,4 @@ stderr.log
 medias/
 .vscode/
 *.env
+staticfiles/

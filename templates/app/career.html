@@ -1,1 +1,63 @@
-{% extends "base.html" %}
+{% extends "base.html" %} {% block content%} {% load static %}
+<section class="flex justify-center items-center h-full snap-always snap-start  bg-gradient-to-bl from-[#FC466B] to-[#3F5EFB]">
+    <h1 class="text-4xl font-semibold text-white">Why Work in AderoTech</h1>
+</section>
+<section class="h-2/5 flex flex-col justify-center items-center snap-always snap-start">
+	<h1 class="text-4xl text-secondary font-bold">Open positions</h1>
+	<span class=""
+		>Couldn't find an answer
+		<a href="/contact_us" class="text-blue-500 font-semibold underline"
+			>contact us</a
+		></span
+	>
+</section>
+
+<section class="min-h-full grid-cols-1 space-y-4 px-10 snap-always snap-start">
+    <script defer src={%static  "js/faq.js" %}></script>
+
+    {% for i in "12345" %}
+	<div class="faq">
+		<div
+			class="bg-gray-200 h-20 flex items-center justify-between px-4 rounded-t-lg"
+		>
+			<div class="">
+				<h1 class="text-2xl font-medium hover:underline hover:cursor-pointer">
+					How long should I expect the projects to be finished?
+				</h1>
+			</div>
+            {% with y=forloop.counter|stringformat:"s" %}
+            {% with id="faq-plus-"|add:y %}
+                
+          
+			<img
+				src="/static/images/icons/material-symbols-light_add.svg"
+				alt=""
+                id={{id}}
+				class="hover:cursor-pointer"
+			/>
+            {% endwith %}
+            {% endwith %}
+		</div>
+
+        {% with y=forloop.counter|stringformat:"s" %}
+            {% with id="faq-detail-"|add:y %}
+                
+          
+		
+            <div class="bg-gray-50 p-4 rounded-b-md hidden" id={{id}}>
+                <span
+                    >Lorem ipsum dolor, sit amet consectetur adipisicing elit. Autem neque
+                    numquam veniam, cupiditate sequi natus aliquid reiciendis, repellat
+                    ipsam iusto animi vitae, ipsa fugit aspernatur molestiae magnam eveniet
+                    tempore minus.</span
+                >
+            </div>
+            {% endwith %}
+            {% endwith %}
+
+	</div>
+
+    {% endfor %}
+</section>
+
+{% endblock %}

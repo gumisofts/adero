@@ -19,9 +19,10 @@ class NavigationItem:
 
 nav_items = [
     NavigationItem("Home", "/"),
+    NavigationItem("Services", "/services"),
     NavigationItem("About", "/about"),
     NavigationItem("Careers", "/careers"),
-    NavigationItem("faq", "/faq"),
+    NavigationItem("FAQ", "/faq"),
 ]
 
 
@@ -32,7 +33,19 @@ def home(request):
         context={
             "services_list": services_list,
             "nav_items": nav_items,
-            "nav_index": 0,
+            "nav_index": 1,
+        },
+    )
+
+
+def services(request):
+    return render(
+        request,
+        "app/services.html",
+        context={
+            "services_list": services_list,
+            "nav_items": nav_items,
+            "nav_index": 2,
         },
     )
 
@@ -42,7 +55,12 @@ def about(request):
     return render(
         request,
         "app/about.html",
-        context={"services": services, "services_list": services_list, "nav_index": 2},
+        context={
+            "services": services,
+            "services_list": services_list,
+            "nav_index": 3,
+            "nav_items": nav_items,
+        },
     )
 
 
@@ -52,7 +70,8 @@ def career(request):
         "app/career.html",
         context={
             "services_list": services_list,
-            "nav_index": 3,
+            "nav_index": 4,
+            "nav_items": nav_items,
         },
     )
 
@@ -63,7 +82,20 @@ def faq(request):
         "app/faq.html",
         context={
             "services_list": services_list,
-            "nav_index": 4,
+            "nav_index": 5,
+            "nav_items": nav_items,
+        },
+    )
+
+
+def contact_us(request):
+    return render(
+        request,
+        "app/contact_us.html",
+        context={
+            "services_list": services_list,
+            "nav_index": 6,
+            "nav_items": nav_items,
         },
     )
 
