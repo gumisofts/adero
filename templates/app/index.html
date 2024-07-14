@@ -1,25 +1,18 @@
 {% extends "base.html" %} {% block content %} {% load static %}
 	<section
-		class="flex justify-center mt-14 items-center h-screen bg-[url('/staticfiles/images/bg_gradient2.svg')] bg-no-repeat bg-cover pt-4 snap-always snap-start"
+		class="flex flex-col  gap-6 justify-center mt-14 items-center h-screen bg-[url('/staticfiles/images/main_bg.svg')] bg-no-repeat bg-cover pt-4 snap-always snap-start"
 	>
-		
-		<div
-			class="flex flex-col gap-y-10 justify-start items-start py-28 px-8 z-30"
-		>
+	
 			<h1 class="text-4xl font-bold text-white">We Rise By Lifting Others</h1>
-			<p class="text-2xl font-semibold text-white">
+			<p class="text-2xl font-semibold text-white	w-1/2">
 				Through digital technology, we are here to address your issues on a
 				global scale and improve your quality of life.
 			</p>
 			<a
-				class="bg-cyan-900 py-2 px-4 rounded-lg text-lg font-semibold text-white hover:scale-105 duration-500" href='/contact_us'
+				class="animate-bounce ring-1 ring-white hover:ring-2 hover:animate-none  py-2 px-4 rounded-lg text-lg font-semibold text-white hover:scale-105 duration-500" href='/contact_us'
 			>
 				Contact Us
 		</a>
-		</div>
-
-		<img src={%static "images/landing_img.png"%} alt="Landing Image"
-		class="max-h-xl max-w-2xl z-20" />
 	</section>
 <section class="h-dvh flex justify-between bg-primary z-20 p-4 snap-always snap-start">
 	<img src={%static "images/page_stack.png"%} alt="page stack" srcset="" class=""/>

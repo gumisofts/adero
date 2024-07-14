@@ -84,7 +84,7 @@
         <li class="group hover:cursor-pointer" id="services" onmouseout="hideServiceMenu()" onmouseover="showServiceMenu()">
           <a class="" href={{item.link}}
             ><span
-              class="text-secondary  text-lg group-hover:text-primary visited:text-primary duration-500 ease-out"
+              class="text-secondary font-medium text-lg group-hover:text-primary visited:text-primary duration-500 ease-out"
               >{{item.name}} <svg id="more-services-icon" width="28" height="28" viewBox="0 0 28 28" fill="none" class="inline  group-hover:rotate-180 duration-500" xmlns="http://www.w3.org/2000/svg">
                 <g clip-path="url(#clip0_491_203)">
                 <path class="group-hover:fill-primary" fill-rule="evenodd" clip-rule="evenodd" d="M15.2366 18.7367C14.9084 19.0644 14.4636 19.2485 13.9999 19.2485C13.5361 19.2485 13.0913 19.0644 12.7632 18.7367L6.16222 12.138C5.83408 11.8097 5.64979 11.3645 5.6499 10.9004C5.65001 10.4362 5.83451 9.99109 6.1628 9.66295C6.49109 9.33481 6.93629 9.15053 7.40046 9.15063C7.86463 9.15074 8.30974 9.33524 8.63788 9.66353L13.9999 15.0255L19.3619 9.66353C19.6918 9.3446 20.1338 9.168 20.5926 9.17177C21.0515 9.17554 21.4905 9.35937 21.8151 9.68369C22.1397 10.008 22.324 10.4468 22.3282 10.9057C22.3324 11.3645 22.1562 11.8067 21.8376 12.1369L15.2377 18.7379L15.2366 18.7367Z" fill="#023047"/>
@@ -115,9 +115,11 @@
       </ul>
 
         <a
-          class="ring-2 ring-primary rounded-lg px-4 py-1 font-bold text-secondary text-lg hover:bg-primary duration-300 hover:text-white hover:scale-105" href='/contact_us'
+          class="inline-flex items-center ring-2 ring-primary rounded-lg px-4 py-1 font-bold text-primary text-lg hover:bg-primary duration-300 hover:text-white hover:scale-105" href='/contact_us'
         >
-          Talk to us
+          Talk to us <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
+        </svg>
       </a>
     </header>
 
