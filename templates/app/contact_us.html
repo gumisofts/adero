@@ -1,6 +1,6 @@
 {% extends "base.html" %} {% block content %} {% load static %}
 <section
-	class="flex flex-col justify-center items-center h-1/2 gap-4 bg-gradient-to-bl from-[#FC466B] to-[#3F5EFB] snap-always snap-start"
+	class="flex flex-col justify-center items-center h-2/5 gap-4 bg-gradient-to-bl from-[#FC466B] to-[#3F5EFB] snap-always snap-start"
 >
 	<h1 class="text-4xl text-white font-bold">Contact Us</h1>
 
@@ -9,7 +9,7 @@
 	</p>
 </section>
 
-<section class="snap-always snap-start bg-[url('/staticfiles/images/bg5.svg')]">
+<section class="snap-always snap-start bg-gradient-to-tl from-[#FC466B] to-[#3F5EFB] snap-always snap-start">
     <script defer   src={% static "js/contact_us.js" %}></script>
 	<div class="flex gap-4 p-4 w-screen backdrop-blur-md">
 		<div
@@ -18,12 +18,12 @@
 			<div class="flex-col flex items-stretch">
 				<label
 					for="fullname"
-					class="block mb-2 text-sm font-medium text-gray-900"
+					class="block mb-2 text-sm font-medium text-white"
 					>Full Name</label
 				>
 				<input
 					class="input px-4 py-2 rounded-md bg-gray-100 ring-primary ring-1 outline-primary focus:outline-double"
-					placeholder="Ahmed Ali"
+					placeholder="John Doe"
 					type="text"
 					value=""
 				/>
@@ -31,13 +31,13 @@
 			<div class="flex-col flex items-stretch">
 				<label
 					for="email"
-					class="block mb-2 text-sm font-medium text-gray-900 justify-self-start align-self-start"
+					class="block mb-2 text-sm font-medium text-white justify-self-start align-self-start"
 					>Email Address</label
 				>
 
 				<input
-					class="input px-4 py-2 rounded-md bg-gray-100 ring-primary ring-1 outline-primary focus:outline-double"
-					placeholder="example@gmail.com"
+					class="input px-4 py-2 rounded-md bg-gray-100 ring-primary ring-1 outline-primary focus:outline-double focus:ring-1 ring-inset"
+					placeholder="johndoe@example.com"
 					type="email"
 					value=""
 				/>
@@ -101,7 +101,7 @@
 			<div class="col-span-2">
 				<label
 					for="message"
-					class="block mb-2 text-sm font-medium text-gray-900"
+					class="block mb-2 text-sm font-medium text-white"
 					>Message</label
 				>
 				<textarea
@@ -118,40 +118,40 @@
 				Send message
 			</button>
 		</div>
-		<div class="w-1/2 p-4 flex-col flex gap-4 rounded-lg backdrop-blur-md z-20">
-			<h1 class="text-4xl font-medium">Contact Information</h1>
+		<div class="text-white w-1/2 p-4 flex-col flex gap-4 rounded-lg backdrop-blur-md z-20">
+			<h1 class="text-2xl font-medium">Contact Information</h1>
 			<span class=""
 				>Reach out to us by phone or visit our office whenever you like. We aim
 				to respond to all queries within 24 hours during business days. We're
 				here to assist you with any questions.</span
 			>
 			<div
-				class="flex gap-4 items-center py-2 hover:bg-gray-100 hover:opacity-50 rounded-md"
+				class="flex border border-white gap-4 items-center text-white py-2 hover:text-secondary  hover:opacity-80 rounded-md"
 			>
 				<img src={%static "images/icons/location.svg"%} alt="" class="size-12"
 				/>
 				<span class="text-sm font-medium">
-					<h1 class="font-medium text-secondary text-lg">Visit our office</h1>
+					<h1 class="font-medium text-lg">Visit our office</h1>
 					Some Building,Piasa,Addis Ababa,Ethiopia.
 				</span>
 			</div>
 			<div
-				class="flex gap-4 items-center py-2 hover:bg-gray-100 hover:opacity-50 rounded-md"
+				class="flex gap-4 border border-white items-center py-2 hover:opacity-80 rounded-md"
 			>
 				<img src={%static "images/icons/phone_icon.svg"%} alt="" class="size-12"
 				/>
 				<span class="text-sm font-medium">
-					<h1 class="font-medium text-secondary text-lg">Give us a call</h1>
+					<h1 class="font-medium text-white text-lg">Give us a call</h1>
 					+251-912-609473
 				</span>
 			</div>
 			<div
-				class="flex gap-4 items-center py-2 hover:bg-gray-100 hover:opacity-50 rounded-md"
+				class="flex gap-4 border border-white items-center py-2  hover:opacity-80 rounded-md"
 			>
 				<img src={%static "images/icons/email_icon.svg"%} alt="" class="size-12"
 				/>
 				<span class="text-sm font-normal">
-					<h1 class="font-medium text-secondary text-lg">Email us</h1>
+					<h1 class="font-medium text-white text-lg">Email us</h1>
 					contact@adero.tech
 				</span>
 			</div>
