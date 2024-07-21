@@ -9,3 +9,15 @@ function hideServiceMenu(){
     document.getElementById('more-services-icon').classList.remove('rotate-180');
 
 }
+function header_expand(event){
+    document.getElementById('header').classList.toggle('h-max');
+    document.getElementById('header-menu-more').classList.toggle('hidden');
+    document.getElementById('header-menu-less').classList.toggle('hidden');
+
+
+    
+}
+
+"click touchend".split(" ").forEach(function (item) {
+    document.getElementById('header-menu').addEventListener(item, header_expand,false);
+});
