@@ -47,6 +47,7 @@ def services(request):
         context={
             "services_list": services_list,
             "nav_items": nav_items,
+            "services": info.services,
             "nav_index": 2,
         },
     )
