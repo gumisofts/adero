@@ -14,14 +14,14 @@
 
 	<h1 class="text-4xl text-secondary text-center p-4">Frequently Asked Questions</h1>
 
-    {% for i in "12345" %}
+    {% for item in faqs %}
 	<div class="faq">
 		<div
 			class="bg-gray-200 h-20 flex items-center justify-between px-4 rounded-t-lg"
 		>
 			<div class="">
 				<h1 class="text-2xl font-medium hover:underline hover:cursor-pointer">
-					How long should I expect the projects to be finished?
+					{{item.question}}
 				</h1>
 			</div>
             {% with y=forloop.counter|stringformat:"s" %}
@@ -43,10 +43,7 @@
 		
             <div class="bg-gray-50 p-4 rounded-b-md hidden" id={{id}}>
                 <span
-                    >Lorem ipsum dolor, sit amet consectetur adipisicing elit. Autem neque
-                    numquam veniam, cupiditate sequi natus aliquid reiciendis, repellat
-                    ipsam iusto animi vitae, ipsa fugit aspernatur molestiae magnam eveniet
-                    tempore minus.</span
+                    >{{item.description}}</span
                 >
             </div>
             {% endwith %}

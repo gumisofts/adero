@@ -1,6 +1,8 @@
 from django.shortcuts import render
 from .models import *
 
+import app.info as info
+
 services_list = [
     "Software Development",
     "IT Consultancy",
@@ -60,6 +62,7 @@ def about(request):
             "services_list": services_list,
             "nav_index": 3,
             "nav_items": nav_items,
+            "services": info.services,
         },
     )
 
@@ -84,6 +87,7 @@ def faq(request):
             "services_list": services_list,
             "nav_index": 5,
             "nav_items": nav_items,
+            "faqs": info.faqs,
         },
     )
 
