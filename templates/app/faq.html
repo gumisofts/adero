@@ -12,15 +12,15 @@
 <section class="min-h-full grid-cols-1 space-y-4 px-10 snap-always snap-start">
     <script defer src={%static  "js/faq.js" %}></script>
 
-	<h1 class="text-4xl text-secondary text-center p-4">Frequently Asked Questions</h1>
+	<h1 class="text-2xl md:text-4xl text-secondary text-center md:p-4">Frequently Asked Questions</h1>
 
     {% for item in faqs %}
 	<div class="faq">
 		<div
-			class="bg-gray-200 h-20 flex items-center justify-between px-4 rounded-t-lg"
+			class="bg-gray-200 min-h-20 flex items-center justify-between px-4 rounded-t-lg"
 		>
 			<div class="">
-				<h1 class="text-2xl font-medium hover:underline hover:cursor-pointer">
+				<h1 class="text-sm md:text-lg font-medium hover:underline hover:cursor-pointer">
 					{{item.question}}
 				</h1>
 			</div>

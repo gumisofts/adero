@@ -36,6 +36,7 @@ def home(request):
             "services_list": services_list,
             "nav_items": nav_items,
             "nav_index": 1,
+            "services": info.services,
         },
     )
 

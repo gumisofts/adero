@@ -1,6 +1,6 @@
 {% extends "base.html" %} {% block content %} {% load static %}
 <section
-	class="flex flex-col justify-center items-center h-2/5 gap-4 bg-gradient-to-bl from-[#FC466B] to-[#3F5EFB] snap-always snap-start"
+	class="flex flex-col justify-center text-center items-center h-2/5 gap-4 bg-gradient-to-bl from-[#FC466B] to-[#3F5EFB] snap-always snap-start"
 >
 	<h1 class="text-4xl text-white font-bold">Contact Us</h1>
 
@@ -11,9 +11,9 @@
 
 <section class="snap-always snap-start bg-gradient-to-tl from-[#FC466B] to-[#3F5EFB] snap-always snap-start">
     <script defer   src={% static "js/contact_us.js" %}></script>
-	<div class="flex gap-4 p-4 w-screen backdrop-blur-md">
+	<div class="flex flex-col md:flex-row justify-evenly p-4 w-screen backdrop-blur-md">
 		<div
-			class="grid content-start place-content-between grid-cols-2 gap-4 justify-between items-start w-1/2 p-4 rounded-md border-2 border-black backdrop-blur-md"
+			class="grid content-start place-content-between grid-cols-2 gap-4 justify-between items-start p-4 rounded-md border-2 border-black backdrop-blur-md"
 		>
 			<div class="flex-col flex items-stretch">
 				<label
@@ -118,9 +118,9 @@
 				Send message
 			</button>
 		</div>
-		<div class="text-white w-1/2 p-4 flex-col flex gap-4 rounded-lg backdrop-blur-md z-20">
+		<div class="text-white p-4 flex-col flex gap-4 rounded-lg backdrop-blur-md z-20">
 			<h1 class="text-2xl font-medium">Contact Information</h1>
-			<span class=""
+			<span class="md:max-w-96"
 				>Reach out to us by phone or visit our office whenever you like. We aim
 				to respond to all queries within 24 hours during business days. We're
 				here to assist you with any questions.</span
