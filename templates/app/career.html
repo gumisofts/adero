@@ -1,87 +1,48 @@
 {% extends "base.html" %} {% block content%} {% load static %}
-<section class="flex justify-center items-center h-full snap-always snap-start  bg-gradient-to-bl from-[#FC466B] to-[#3F5EFB]">
-    <h1 class="text-4xl font-semibold text-white text-center">Why Work in AderoTech</h1>
+<section class="flex justify-center items-center h-1/2 snap-always snap-start  bg-gradient-to-bl from-[#FC466B] to-[#3F5EFB]">
+    <h1 class="text-4xl font-semibold text-white text-center">Work in AderoTech</h1>
 </section>
-<section class="h-2/5 flex flex-col justify-center items-center snap-always snap-start">
+<section class="p-6 flex flex-col justify-center items-center snap-always snap-start">
 	<h1 class="text-4xl text-secondary font-bold">Open positions</h1>
-	<span class=""
-		>Couldn't find an answer
-		<a href="/contact_us" class="text-blue-500 font-semibold underline"
-			>contact us</a
-		></span
-	>
+	
 </section>
 
-<section class="min-h-full flex p-4 flex-col items-center justify-center items-start space-y-4 px-10 snap-always snap-start">
+<section class="flex p-4 flex-col items-center justify-start items-start space-y-4 px-10 snap-always snap-start">
     <script defer src={%static  "js/faq.js" %}></script>
 
-	{% for item in "123456" %}
+	{% if open_positions|length == 0  %}
+
+	<h1 class="text-4xl font-bold ">No Open Positions Currently</h1>
+
+	{% else %}
+	
+	{% for item in open_positions %}
 
 	<div class="bg-white  shadow-xl shadow-gray-100 w-full border border-black max-w-4xl flex flex-col sm:flex-row gap-3 sm:items-center  justify-between px-5 py-4 rounded-md">
 	  <div>
 		<span class="text-primary text-sm">Engineering</span>
-		<h3 class="text-secondary font-bold mt-px">Senior Full Stack Backend Engineer</h3>
+		<h3 class="text-secondary font-bold mt-px">{{item.title|capfirst}}</h3>
 		<div class="flex items-center gap-3 mt-2">
-		  <span class="bg-cyan-100 text-primary rounded-full px-3 py-1 text-sm">Full-time</span>
+		  <span class="bg-cyan-100 text-primary rounded-full px-3 py-1 text-sm">{{item.job_type|capfirst}}</span>
 		  <span class="text-slate-600 text-sm flex gap-1 items-center"> <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
 	  <path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
 	  <path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-	</svg> Remote</span>
+	</svg> {{item.mode|capfirst}}</span>
 		</div>
 	  </div>
 	  <div>
-		<button class="bg-primary text-white font-medium px-4 py-2 rounded-md flex gap-1 items-center">Apply Now <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+		{% with y=item.id|stringformat:"s" %}
+		<a href={{"/apply_job/"|add:y}} class="bg-primary text-white font-medium px-4 py-2 rounded-md flex gap-1 items-center">Apply Now <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
 	  <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
 	</svg>
-	</svg></button>
+	</svg></a>
+	{% endwith %}
 	  </div>
 	   </div>
 	   {% endfor %}
-	   {% comment %} Remove this one {% endcomment %}
-	
-    {% for i in "12345" %}
-	<div class="faq hidden">
-		<div
-			class="bg-gray-200 h-20 flex items-center justify-between px-4 rounded-t-lg"
-		>
-			<div class="">
-				<h1 class="text-2xl font-medium hover:underline hover:cursor-pointer">
-					How long should I expect the projects to be finished?
-				</h1>
-			</div>
-            {% with y=forloop.counter|stringformat:"s" %}
-            {% with id="faq-plus-"|add:y %}
-                
-          
-			<img
-				src={%static "images/icons/material-symbols-light_add.svg"%}
-				alt=""
-                id={{id}}
-				class="hover:cursor-pointer"
-			/>
-            {% endwith %}
-            {% endwith %}
-		</div>
+	{% endif %}
 
-        {% with y=forloop.counter|stringformat:"s" %}
-            {% with id="faq-detail-"|add:y %}
-                
-          
-		
-            <div class="bg-gray-50 p-4 rounded-b-md hidden" id={{id}}>
-                <span
-                    >Lorem ipsum dolor, sit amet consectetur adipisicing elit. Autem neque
-                    numquam veniam, cupiditate sequi natus aliquid reiciendis, repellat
-                    ipsam iusto animi vitae, ipsa fugit aspernatur molestiae magnam eveniet
-                    tempore minus.</span
-                >
-            </div>
-            {% endwith %}
-            {% endwith %}
-
-	</div>
-    {% endfor %}
-	{% comment %} Remove this {% endcomment %}
 </section>
+
 
 {% endblock %}

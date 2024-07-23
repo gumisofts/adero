@@ -56,3 +56,11 @@ services = [
         "description": """Our company offers IT consulting services. Experts in information technology (IT) who advise businesses on technological matters may suggest new hardware, software, and hardware components depending on the specific requirements of their clients.""",
     },
 ]
+
+
+site_setting = {
+    "about_us_text": None,
+    "contact_phone": None,
+    "contact_email": None,
+    "office_address": None,
+}

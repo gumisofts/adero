@@ -7,5 +7,19 @@ class ServiceAdmin(admin.ModelAdmin):
     list_display = ["name", "detail"]
 
 
-admin.site.register(User)
+class UserAdmin(admin.ModelAdmin):
+    list_display = ["first_name", "last_name", "email"]
+
+
+class MessageAdmin(admin.ModelAdmin):
+    list_display = ["name", "email", "phone", "message", "service"]
+
+
+class PositionAdmin(admin.ModelAdmin):
+    list_display = ["title", "description"]
+
+
+admin.site.register(User, UserAdmin)
+admin.site.register(Message, MessageAdmin)
+admin.site.register(Position, PositionAdmin)
 admin.site.register(Service, ServiceAdmin)

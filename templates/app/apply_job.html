@@ -1,0 +1,70 @@
+{% extends "base.html" %} {% block content %}
+<section class="snap-always snap-center flex md:justify-center">
+	{% with y="/apply_job/"|add:id|stringformat:"s" %}
+	<form action="{{y}}" method="POST" class="">
+		{% csrf_token %}
+		<div
+			class="flex flex-col justify-center max-w-96 gap-y-2 rounded-lg bg-white z-50 p-4"
+		>
+			<div class="">
+				<h1 class="text-md font-medium text-primary inline">Position:</h1>
+				<p class="text-sm inline font-medium text-secondary">
+					{{position.title}}
+				</p>
+				<br />
+				<h1 class="text-md font-medium text-primary inline">Description:</h1>
+				<p class="inline text-sm">{{position.description}}</p>
+			</div>
+			<div class="flex-col flex items-stretch">
+				<label for="fullname" class="block mb-2 text-sm font-medium text-black"
+					>Full Name</label
+				>
+				<input
+					class="input px-4 py-2 rounded-md bg-gray-100 ring-primary ring-1 outline-primary focus:outline-double"
+					placeholder="John Doe"
+					type="text"
+					value=""
+					name="name"
+				/>
+			</div>
+			<div class="flex-col flex items-stretch">
+				<label
+					for="email"
+					class="block mb-2 text-sm font-medium text-black justify-self-start align-self-start"
+					>Email Address</label
+				>
+
+				<input
+					class="input px-4 py-2 rounded-md bg-gray-100 ring-primary ring-1 outline-primary focus:outline-double focus:ring-1 ring-inset"
+					placeholder="johndoe@example.com"
+					type="email"
+					name="email"
+					value=""
+				/>
+			</div>
+			<div class="flex-col flex items-stretch">
+				<label
+					class="block mb-2 text-sm font-medium text-gray-900 text-black"
+					for="file_input"
+					>Upload Resume</label
+				>
+				<input
+					class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 focus:outline-none"
+					id="file_input"
+					type="file"
+					name="resume"
+				/>
+			</div>
+			<div class="flex justify-between text-sm mt-6">
+				<button
+					type="submit"
+					class="bg-primary rounded-md px-2 py-1 text-white"
+				>
+					Submit
+				</button>
+			</div>
+		</div>
+	</form>
+	{% endwith %}
+</section>
+{% endblock content %}

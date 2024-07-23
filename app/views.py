@@ -2,6 +2,9 @@ from django.shortcuts import render
 from .models import *
 
 import app.info as info
+from django.utils import timezone
+from .forms import ApplyJobForm
+import json
 
 services_list = [
     "Software Development",
@@ -65,6 +68,7 @@ def about(request):
             "nav_index": 3,
             "nav_items": nav_items,
             "services": info.services,
+            "teams": User.objects.exclude(position=None),
         },
     )
 
@@ -77,6 +81,7 @@ def career(request):
             "services_list": services_list,
             "nav_index": 4,
             "nav_items": nav_items,
+            "open_positions": Position.objects.filter(is_open=True),
         },
     )
 
@@ -102,6 +107,37 @@ def contact_us(request):
             "services_list": services_list,
             "nav_index": 6,
             "nav_items": nav_items,
+        },
+    )
+
+
+def apply_job(request, id):
+
+    if request.method == "POST":
+
+        form = ApplyJobForm(request.POST, request.FILES)
+        return render(
+            request,
+            "app/apply_job.html",
+            context={
+                "services_list": services_list,
+                "nav_index": 4,
+                "nav_items": nav_items,
+                "position": Position.objects.get(id=id),
+                "id": id,
+            },
+        )
+
+    return render(
+        request,
+        "app/apply_job.html",
+        context={
+            "services_list": services_list,
+            "nav_index": 4,
+            "nav_items": nav_items,
+            "id": id,
+            "form": ApplyJobForm(),
+            "position": Position.objects.get(id=id),
         },
     )
 

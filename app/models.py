@@ -39,8 +39,52 @@ class User(AbstractUser):
 
     objects = UserManager()
 
+    position = models.ForeignKey(
+        "Position", on_delete=models.CASCADE, null=True, blank=True
+    )
+    pic = models.ImageField(null=True, blank=True)
+
+    github = models.URLField(null=True, blank=True)
+
 
 class Service(models.Model):
     name = models.CharField(max_length=255)
     detail = models.TextField()
     img = models.ImageField()
+
+
+class Position(models.Model):
+    title = models.CharField(max_length=255)
+    description = models.TextField()
+    mode = models.CharField(
+        max_length=255,
+        choices=[("remote", "remote"), ("on-site", "on-site"), ("hybrid", "hybrid")],
+    )
+    job_type = models.CharField(
+        max_length=255,
+        choices=[
+            ("full-time", "full-time"),
+            ("part-time", "part-time"),
+            ("contract", "contract"),
+            ("internship", "internship"),
+        ],
+    )
+    salary = models.PositiveIntegerField(null=True, blank=True)
+    is_open = models.BooleanField(default=True)
+    open_from = models.DateField(null=True, blank=True)
+    open_to = models.DateField(null=True, blank=True)
+
+
+class FAQ(models.Model):
+    question = models.TextField()
+    answer = models.TextField()
+
+
+class Message(models.Model):
+    name = models.CharField(max_length=255)
+    email = models.EmailField()
+    phone = models.CharField(max_length=13)
+    message = models.TextField()
+    service = models.ForeignKey(
+        "Service", on_delete=models.CASCADE, null=True, blank=True
+    )
