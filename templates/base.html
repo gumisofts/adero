@@ -38,6 +38,7 @@
   </head>
   <body class="mt-0 ml-0 pt-18 h-screen snap-y snap-mandatory overflow-y-auto overflow-x-hidden" id="body" style="display:none">
     <script type="text/javascript">
+      
       window.onload = function () {
           setTimeout(function() {
               document.getElementById("body").style.display = "";        
@@ -72,32 +73,28 @@
       <circle cx="286.5" cy="59.5" r="15.5" fill="#219EBC"/>
       </svg>
 
-      <div class="hover:cursor-pointer" id="header-menu" >
+      <button class="" id="header-menu" onclick=toggleNavs()>
 
-      <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M4.5 27V24H31.5V27H4.5ZM4.5 19.5V16.5H31.5V19.5H4.5ZM4.5 12V9H31.5V12H4.5Z" fill="black" class="md:hidden" id="header-menu-more"/>
+  
+
+      <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" class="md:hidden" id="header-menu-more">
+        <path d="M4.5 27V24H31.5V27H4.5ZM4.5 19.5V16.5H31.5V19.5H4.5ZM4.5 12V9H31.5V12H4.5Z" fill="black" />
         </svg>
-        <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" class="hidden" id="header-menu-less">
-          <path d="M10.137 25.8645L18.0015 18L25.866 25.8645M25.866 10.1355L18 18L10.137 10.1355" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-          
-      </div>
+
+          <svg class="hidden" id="header-menu-less" width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M28.5 7.5L7.5 28.5M7.5 7.5L28.5 28.5" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
     </div>
       
       <ul class="flex text-start flex-col justify-start  items-start gap-y-2 md:flex-row gap-x-2 md:grow md:gap-x-10 ml-12 md:items-baseline md:justify-center">
-        <li>
-          <a href="#"
-            ><span
-              class="text-secondary font-semibold text-xl hover:text-primary visited:text-primary duration-300 ease-out"
-            ></span
-          ></a>
-        </li>
+        
 
         {% for item  in nav_items  %}
 
         {% if forloop.counter == nav_index and forloop.counter != 2 %}
         <li>
-          <a href={{item.link}} class="text-start border-b-2 rounded-sm border-primary px-2 md:px-1 duration-300 ease-out"
+          <a href={{item.link}} class="border-b-2 rounded-sm border-primary px-2 md:px-1 duration-300 ease-out"
             ><span
               class="text-lg text-primary visited:text-primary duration-300 ease-out"
               >{{item.name}}</span
@@ -106,7 +103,7 @@
         </li>
         {% elif forloop.counter == 2%}
         <li class="group hover:cursor-pointer" id="services" onmouseout="hideServiceMenu()" onmouseover="showServiceMenu()">
-          <a class="" href={{item.link}}
+          <a class="px-2" href={{item.link}}
             ><span
               class="text-secondary font-medium text-lg group-hover:text-primary visited:text-primary duration-500 ease-out"
               >{{item.name}} <svg class ="hidden md:inline " id="more-services-icon" width="28" height="28" viewBox="0 0 28 28" fill="none" class="inline  group-hover:rotate-180 duration-500" xmlns="http://www.w3.org/2000/svg">
@@ -134,8 +131,6 @@
         {% endif %}
         {% endfor %}
         
-        
-
       </ul>
 
         <a
@@ -266,10 +261,10 @@
         <div class="space-y-2 text-start">
           <h2 class="font-bold text-secondary text-md">Useful Links</h2>
           <ul class="space-y-1.5">
-            <li><a href="#" class="text-secondary text-sm font-medium hover:underline">About</a></li>
-            <li><a href="#" class="text-secondary text-sm font-medium hover:underline">Contact</a></li>
-            <li><a href="#" class="text-secondary text-sm font-medium hover:underline">Career</a></li>
-            <li><a href="#" class="text-secondary text-sm font-medium hover:underline">FAQ</a></li>
+            <li><a href="/about/" class="text-secondary text-sm font-medium hover:underline">About</a></li>
+            <li><a href="/contact_us/" class="text-secondary text-sm font-medium hover:underline">Contact</a></li>
+            <li><a href="/careers/" class="text-secondary text-sm font-medium hover:underline">Career</a></li>
+            <li><a href="/faq/" class="text-secondary text-sm font-medium hover:underline">FAQ</a></li>
           </ul>
         </div>
       </div>
@@ -287,7 +282,7 @@
             <li><a href="#" class="font-medium text-secondary"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"  class="inline" xmlns="http://www.w3.org/2000/svg">
               <path d="M12 11.5C11.337 11.5 10.7011 11.2366 10.2322 10.7678C9.76339 10.2989 9.5 9.66304 9.5 9C9.5 8.33696 9.76339 7.70107 10.2322 7.23223C10.7011 6.76339 11.337 6.5 12 6.5C12.663 6.5 13.2989 6.76339 13.7678 7.23223C14.2366 7.70107 14.5 8.33696 14.5 9C14.5 9.3283 14.4353 9.65339 14.3097 9.95671C14.1841 10.26 13.9999 10.5356 13.7678 10.7678C13.5356 10.9999 13.26 11.1841 12.9567 11.3097C12.6534 11.4353 12.3283 11.5 12 11.5ZM12 2C10.1435 2 8.36301 2.7375 7.05025 4.05025C5.7375 5.36301 5 7.14348 5 9C5 14.25 12 22 12 22C12 22 19 14.25 19 9C19 7.14348 18.2625 5.36301 16.9497 4.05025C15.637 2.7375 13.8565 2 12 2Z" fill="#023047"/>
               </svg>
-              Bole,Addis Ababa,Ethiopia</a></li>
+            Addis Ababa,Ethiopia</a></li>
           </ul>
         </div>
       </div>
