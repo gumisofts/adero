@@ -7,22 +7,7 @@
     
     <h2 class="text-gray-800 text-6xl font-bold text-center text-white">Who are we?</h2>
 </section>
-<section class="flex hidden justify-center w-screen p-4 snap-always snap-start">
 
-  <div class="flex flex-col align-start w-3/6 gap-2">
-    <h1 class="text-4xl font-bold text-secondary">Our Missions</h1>
-    {% lorem 1 b random %}
-  </div>
-  <div class="grid grid-cols-2 gap-2 w-3/6">
-
-    <div class="bg-black">1</div>
-    <div class="bg-black">2</div>
-    <div class="bg-black">3</div>
-    <div class="bg-black">4</div>
-
-  </div>
-
-</section>
 <section class="p-4">
    <h1 class="text-2xl text-primary font-bold"> Our Mission</h1>
 
@@ -147,14 +132,14 @@
                <div class="w-full px-3 sm:px-4 xl:w-1/2">
                   <div class="py-3 sm:py-4">
                      <img
-                        src="https://cdn.tailgrids.com/2.0/image/marketing/images/about/about-01/image-1.jpg"
+                        src={%static 'images/with_client.jpg'%}
                         alt=""
                         class="w-full rounded-2xl"
                         />
                   </div>
                   <div class="py-3 sm:py-4">
                      <img
-                        src="https://cdn.tailgrids.com/2.0/image/marketing/images/about/about-01/image-2.jpg"
+                        src={%static 'images/adero_billboard.jpg'%}
                         alt=""
                         class="w-full rounded-2xl"
                         />
