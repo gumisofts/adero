@@ -30,16 +30,20 @@ nav_items = [
     NavigationItem("FAQ", "/faq"),
 ]
 
+context = {
+    "services_list": services_list,
+    "services": info.services,
+    "nav_items": nav_items,
+}
+
 
 def home(request):
     return render(
         request,
         "app/index.html",
         context={
-            "services_list": services_list,
-            "nav_items": nav_items,
             "nav_index": 1,
-            "services": info.services,
+            **context,
         },
     )
 
@@ -48,12 +52,7 @@ def services(request):
     return render(
         request,
         "app/services.html",
-        context={
-            "services_list": services_list,
-            "nav_items": nav_items,
-            "services": info.services,
-            "nav_index": 2,
-        },
+        context={"nav_index": 2, **context},
     )
 
 
@@ -63,12 +62,10 @@ def about(request):
         request,
         "app/about.html",
         context={
-            "services": services,
-            "services_list": services_list,
             "nav_index": 3,
-            "nav_items": nav_items,
             "services": info.services,
             "teams": User.objects.exclude(position=None),
+            **context,
         },
     )
 
@@ -78,10 +75,9 @@ def career(request):
         request,
         "app/career.html",
         context={
-            "services_list": services_list,
             "nav_index": 4,
-            "nav_items": nav_items,
             "open_positions": Position.objects.filter(is_open=True),
+            **context,
         },
     )
 
@@ -91,10 +87,9 @@ def faq(request):
         request,
         "app/faq.html",
         context={
-            "services_list": services_list,
             "nav_index": 5,
-            "nav_items": nav_items,
             "faqs": info.faqs,
+            **context,
         },
     )
 
@@ -103,11 +98,7 @@ def contact_us(request):
     return render(
         request,
         "app/contact_us.html",
-        context={
-            "services_list": services_list,
-            "nav_index": 6,
-            "nav_items": nav_items,
-        },
+        context={"nav_index": 6, **context},
     )
 
 
@@ -120,11 +111,10 @@ def apply_job(request, id):
             request,
             "app/apply_job.html",
             context={
-                "services_list": services_list,
                 "nav_index": 4,
-                "nav_items": nav_items,
                 "position": Position.objects.get(id=id),
                 "id": id,
+                **context,
             },
         )
 
@@ -132,15 +122,25 @@ def apply_job(request, id):
         request,
         "app/apply_job.html",
         context={
-            "services_list": services_list,
             "nav_index": 4,
-            "nav_items": nav_items,
             "id": id,
             "form": ApplyJobForm(),
             "position": Position.objects.get(id=id),
+            **context,
         },
     )
 
 
+def softawre_service(request):
+    return render(request, "app/softaware_services.html", context={**context})
+
+
 def test(request):
     return render(request, "app/index2.html")
+
+
+# Softaware Services
+# Web apps
+# Mobile applications
+# Ecommerce
+# Integrations: sms,payment

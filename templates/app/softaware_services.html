@@ -1,0 +1,62 @@
+{% extends "base.html" %} {% block content %} {% load static %}
+<section
+	class="h-full w-full bg-indigo-500 lg:bg-white snap-always flex flex-col bg-top-right justify-evenly md:justify-center snap-center bg-[url('/staticfiles/images/modified_bg.svg')] bg-no-repeat"
+>
+	<div class="flex flex-col justify-center items-center gap-4 p-4">
+		<h1
+			class="text-center text-2xl font-bold text-white lg:text-black md:h-1/2"
+		>
+			Excellent Software Development Services for your Success
+		</h1>
+
+		<button
+			class="text-lg font-bold bg-primary text-white px-4 py-1 rounded-lg"
+		>
+			Get started
+		</button>
+	</div>
+</section>
+
+<section class="snap-always snap-center h-full px-12">
+	<div class="grid grid-cols-1 gap-4 md:grid-cols-3 relative -top-60">
+		{% for item in "123456" %}
+		<div
+			class="max-w-96 rounded-2xl bg-white shadow-2xl p-4 py-12 hover:scale-105 duration-300 ease-out"
+		>
+			<img src={%static "images/icons/email_icon.svg"%} alt="some/image"
+			class="h-18 w-20" />
+			<h1 class="text-lg font-medium">Mobile Applications</h1>
+			<p class="text-sm">
+				Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit
+				necessitatibus fugiat odio ut doloribus ad, similique nulla ab odit
+				impedit dolores iure placeat esse! Magni dicta ipsam sapiente a
+				distinctio.
+			</p>
+		</div>
+		{% endfor %}
+	</div>
+	<div
+		class="flex flex-col md:flex-row text-white justify-evenly bg-secondary p-4 md:p-12 rounded-xl"
+	>
+		<h1 class="text-4xl border-l-4 border-primary pl-4 w-96">
+			Contact us for details on our software solutions.
+		</h1>
+		<div class="flex flex-col items-center">
+			<svg
+				viewBox="0 0 24 24"
+				width="96"
+				fill="none"
+				class="inline"
+				xmlns="http://www.w3.org/2000/svg"
+				class="h-24 w-32"
+			>
+				<path
+					d="M4 20C3.45 20 2.97933 19.8043 2.588 19.413C2.19667 19.0217 2.00067 18.5507 2 18V6C2 5.45 2.196 4.97933 2.588 4.588C2.98 4.19667 3.45067 4.00067 4 4H20C20.55 4 21.021 4.196 21.413 4.588C21.805 4.98 22.0007 5.45067 22 6V18C22 18.55 21.8043 19.021 21.413 19.413C21.0217 19.805 20.5507 20.0007 20 20H4ZM12 13L20 8V6L12 11L4 6V8L12 13Z"
+					fill="white"
+				/>
+			</svg>
+			<h1 class="text-3xl text-primary">contact@adero.tech</h1>
+		</div>
+	</div>
+</section>
+{% endblock content %}
