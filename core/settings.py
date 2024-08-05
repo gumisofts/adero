@@ -13,7 +13,7 @@ SECRET_KEY = "django-insecure-b)8c^$6#(_16)_n@)kel+=8y-^_2wnkgfjtv1yb$qc9=kg=&&n
 
 DEBUG = True
 
-ALLOWED_HOSTS = ["localhost", "adero.gumiapps.com", "adero.tech", "192.168.124.73"]
+ALLOWED_HOSTS = ["localhost", "adero.gumiapps.com", "adero.tech", "192.168.77.73"]
 
 AUTH_USER_MODEL = "app.User"
 
@@ -111,3 +111,17 @@ MEDIA_ROOT = env("MEDIA_ROOT", "medias")
 MEDIA_URL = env("MEDIA_URL", "medias/")
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+
+EMAIL_USE_SSL = True
+EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
+EMAIL_HOST = env("EMAIL_HOST")
+EMAIL_PORT = env("EMAIL_PORT")
+EMAIL_HOST_USER = env("EMAIL_USER")
+EMAIL_HOST_PASSWORD = env("EMAIL_PASSWORD")
+
+ADMINS = (("Nurad", "nuradhussen082@gmail.com"),)
+MANAGERS = (
+    ("Nurad", "nuradhussen082@gmail.com"),
+    ("Yayha", "contact@adero.tech"),
+)

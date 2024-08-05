@@ -1,5 +1,6 @@
 from django.forms import Form
 from django import forms
+import app.info as info
 
 
 class ApplyJobForm(Form):
@@ -17,3 +18,10 @@ class ApplyJobForm(Form):
             },
         ),
     )
+
+
+class ContactForm(Form):
+    fullname = forms.CharField(label="Full Name", max_length=255)
+    email = forms.EmailField(label="Email")
+    message = forms.Textarea()
+    service = forms.CharField()

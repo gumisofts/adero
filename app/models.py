@@ -2,6 +2,10 @@ from django.db import models
 from django.contrib.auth.models import AbstractUser, BaseUserManager
 from django.contrib.auth.validators import UnicodeUsernameValidator
 from django.utils.translation import gettext_lazy as _
+from django.dispatch import receiver
+from django.db.models.signals import post_save
+from core.mail import *
+from django.shortcuts import render
 
 
 class UserManager(BaseUserManager):
@@ -88,3 +92,9 @@ class Message(models.Model):
     service = models.ForeignKey(
         "Service", on_delete=models.CASCADE, null=True, blank=True
     )
+
+
+@receiver([post_save], sender=Message)
+def send_email_when_message_is_rececived(instance, created, sender, **extra_fields):
+    if created:
+        send_email_managers()

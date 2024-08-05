@@ -8,9 +8,10 @@ for(let i=0;i<services.length;i++){
         document.getElementById("service-dropdown").classList.toggle("hidden");
         let menubtn=document.getElementById("service-menu-button");
         let svg_icon=menubtn.children[0]
-        menubtn.innerHTML=services[i].innerHTML;
-        menubtn.appendChild(svg_icon);
-        menubtn.value=services[i].value;
+        menubtn.value=services[i].innerHTML;
+        // menubtn.appendChild(svg_icon);
+        // menubtn.value=services[i].value;
+        console.log(menubtn)
 
     })
 }

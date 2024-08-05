@@ -12,21 +12,36 @@
 <section class="snap-always snap-start bg-gradient-to-tl from-[#FC466B] to-[#3F5EFB] snap-always snap-start">
     <script defer   src={% static "js/contact_us.js" %}></script>
 	<div class="flex flex-col md:flex-row justify-evenly p-4 w-screen backdrop-blur-md">
-		<div
-			class="grid content-start place-content-between grid-cols-2 gap-4 justify-between items-start p-4 rounded-md border-2 border-black backdrop-blur-md"
+		<form
+			class="grid content-start place-content-between grid-cols-2 gap-4 justify-between items-start p-4 rounded-md border-2 border-black backdrop-blur-md" method='post' action='/contact_us/'
 		>
+		{% csrf_token %}
 			<div class="flex-col flex items-stretch">
 				<label
 					for="fullname"
 					class="block mb-2 text-sm font-medium text-white"
 					>Full Name</label
 				>
+
+				{% if form %}
 				<input
 					class="input px-4 py-2 rounded-md bg-gray-100 ring-primary ring-1 outline-primary focus:outline-double"
 					placeholder="John Doe"
 					type="text"
-					value=""
+					name='fullname'
+					value={{form.data.fullname}}
+					required
 				/>
+				{% else %}
+				<input
+					class="input px-4 py-2 rounded-md bg-gray-100 ring-primary ring-1 outline-primary focus:outline-double"
+					placeholder="John Doe"
+					type="text"
+					name='fullname'
+					value=""
+					required
+				/>
+				{% endif %}
 			</div>
 			<div class="flex-col flex items-stretch">
 				<label
@@ -34,25 +49,42 @@
 					class="block mb-2 text-sm font-medium text-white justify-self-start align-self-start"
 					>Email Address</label
 				>
-
+				{% if form %}
 				<input
 					class="input px-4 py-2 rounded-md bg-gray-100 ring-primary ring-1 outline-primary focus:outline-double focus:ring-1 ring-inset"
 					placeholder="johndoe@example.com"
 					type="email"
-					value=""
+					name='email'
+					required
+					value={{form.data.email}}
+
 				/>
+				{% else %}
+				<input
+					class="input px-4 py-2 rounded-md bg-gray-100 ring-primary ring-1 outline-primary focus:outline-double focus:ring-1 ring-inset"
+					placeholder="johndoe@example.com"
+					type="email"
+					name='email'
+					required
+					value=''
+
+				/>
+				{% endif %}
 			</div>
 			<div class="relative inline-block text-left col-span-2">
-				<button
-					type="button"
-					class="inline-flex w-full justify-between gap-x-1.5 rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-primary hover:bg-gray-50"
+				<input
+					type="text"
+					class="text-start inline-flex w-full justify-between gap-x-1.5 rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-primary hover:bg-gray-50"
 					id="service-menu-button"
 					aria-expanded="true"
 					aria-haspopup="true"
+					name='service'
+					placeholder='Select service'
+					required
+					value={{form.data.service}}
 				>
-					Service
 					<svg
-						class="-mr-1 h-5 w-5 text-gray-400"
+						class="hidden -mr-1 h-5 w-5 text-gray-400 inline"
 						viewBox="0 0 20 20"
 						fill="currentColor"
 						aria-hidden="true"
@@ -63,7 +95,7 @@
 							clip-rule="evenodd"
 						/>
 					</svg>
-				</button>
+				</input>
 				<div
 					class="absolute hidden l-0 z-10 mt-2 w-full items-start origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
 					role="menu"
@@ -108,7 +140,9 @@
 					id="message"
 					rows="4"
 					class="block outline-primary  p-2.5 w-full h-64 text-sm text-gray-900 bg-gray-50 rounded-lg ring-1 ring-primary  focus:ring-blue-500 focus:border-blue-500"
-					placeholder="Write anything regarding the selected service..."
+					name='message'
+					placeholder="Write anything regarding the selected service..." required
+					value={{form.data.message}}
 				></textarea>
 			</div>
 			<button
@@ -117,7 +151,7 @@
 			>
 				Send message
 			</button>
-		</div>
+		</form>
 		<div class="text-white p-4 flex-col flex gap-4 rounded-lg backdrop-blur-md z-20">
 			<h1 class="text-2xl font-medium">Contact Information</h1>
 			<span class="md:max-w-96"
