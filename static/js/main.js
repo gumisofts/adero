@@ -1,12 +1,18 @@
 
 function showServiceMenu(){
-    document.getElementById('services-menu').classList.remove('hidden');
-
-    document.getElementById('more-services-icon').classList.add('rotate-180');
+    if(window.innerWidth >= 768){
+        document.getElementById('services-menu').classList.remove('hidden');
+        
+        document.getElementById('more-services-icon').classList.add('rotate-180');
+    }
 }
+console.log(window.innerWidth);
 function hideServiceMenu(){
-    document.getElementById('services-menu').classList.add('hidden');
-    document.getElementById('more-services-icon').classList.remove('rotate-180');
+    if(window.innerWidth >=768){
+
+        document.getElementById('services-menu').classList.add('hidden');
+        document.getElementById('more-services-icon').classList.remove('rotate-180');
+    }
 
 }
 function toggleNavs(){

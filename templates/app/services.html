@@ -4,7 +4,7 @@
 	<h1 class="text-2xl text-center font-bold mx-4 md:text-4xl">Our Services</h1>
 	<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 place-items-center gap-4 w-screen justify-around p-6">
 	  {% for service in services %}
-  <div class="max-w-sm flex flex-col bg-secondary justify-around border bornder-gray-200 rounded-lg shadow hover:scale-105 duration-500 ease-out ">
+  <div class="max-w-sm flex flex-col bg-secondary justify-around border bornder-gray-200 rounded-lg shadow hover:scale-105 duration-700 ease-out animate-from-bottom opacity-0 translate-y-28">
 	<a href="#" class="hidden ">
 		<img class=" size-28 rounded-t-lg" src={%static "images/icons/terminal.svg"%} alt="service image" />
 		
@@ -27,4 +27,5 @@
 	  </div>
 	</div>
   </section>
+
 {% endblock content %}

@@ -57,12 +57,30 @@ services = [
     },
 ]
 services_list = [
-    "Software Development",
-    "IT Consultancy",
-    "Education Consultancy",
-    "Trainings and Courses",
-    "Social Media Marketing",
-    "Online Applications Processing",
+    {
+        "name": "Software Development",
+        "link": "/software_services/",
+    },
+    {
+        "name": "IT Consultancy",
+        "link": "#",
+    },
+    {
+        "name": "Education Consultancy",
+        "link": "#",
+    },
+    {
+        "name": "Trainings and Courses",
+        "link": "#",
+    },
+    {
+        "name": "Social Media Marketing",
+        "link": "#",
+    },
+    {
+        "name": "Online Applications Processing",
+        "link": "#",
+    },
 ]
 
 site_setting = {

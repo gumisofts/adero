@@ -22,9 +22,8 @@ nav_items = [
     NavigationItem("Services", "/services"),
     NavigationItem("About", "/about"),
     NavigationItem("Careers", "/careers"),
-    NavigationItem("FAQ", "/faq"),
+    NavigationItem("FAQs", "/faq"),
 ]
-
 context = {
     "services_list": info.services_list,
     "services": info.services,
