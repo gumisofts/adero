@@ -175,6 +175,10 @@ def softawre_service(request):
     return render(request, "app/softaware_services.html", context={**context})
 
 
+def education_consultancy(request):
+    return render(request, "app/education_consultancy.html", context={**context})
+
+
 def test(request):
     return render(request, "app/index2.html")
 

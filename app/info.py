@@ -59,7 +59,7 @@ services = [
 services_list = [
     {
         "name": "Software Development",
-        "link": "/software_services/",
+        "link": "/services/software_services/",
     },
     {
         "name": "IT Consultancy",
@@ -67,7 +67,7 @@ services_list = [
     },
     {
         "name": "Education Consultancy",
-        "link": "#",
+        "link": "/services/education_consultancy/",
     },
     {
         "name": "Trainings and Courses",
