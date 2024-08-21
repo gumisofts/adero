@@ -9,6 +9,7 @@ import json
 from django.template.loader import render_to_string
 
 from core.mail import *
+from core.recaptcha import *
 
 
 class NavigationItem:
@@ -92,9 +93,11 @@ def contact_us(request):
 
     if request.method == "POST":
 
+        recap = request.POST["g-recaptcha-response"]
+
         form = ContactForm(data=request.POST)
 
-        if not form.is_valid():
+        if not form.is_valid() or not verify(recap):
 
             return render(
                 request,
@@ -177,6 +180,10 @@ def softawre_service(request):
 
 def education_consultancy(request):
     return render(request, "app/education_consultancy.html", context={**context})
+
+
+def training_and_courses(request):
+    return render(request, "app/training_and_courses.html", context={**context})
 
 
 def test(request):

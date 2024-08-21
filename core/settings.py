@@ -125,3 +125,8 @@ MANAGERS = (
     ("Nurad", "nuradhussen082@gmail.com"),
     ("Yayha", "contact@adero.tech"),
 )
+
+RE_CAPTCHA_SITE_KEY = env("RE_CAPTCHA_SITE_KEY")
+RE_CAPTCHA_SECRET = env("RE_CAPTCHA_SECRET")
+RE_CAPTCHA_PROJECT_ID = env("RE_CAPTCHA_PROJECT_ID")
+GCLOUD_API_KEY = env("GCLOUD_API_KEY")

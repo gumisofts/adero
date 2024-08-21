@@ -14,6 +14,7 @@ urlpatterns = [
     path("apply_job/<int:id>", apply_job),
     path("services/software_services/", softawre_service),
     path("services/education_consultancy/", education_consultancy),
+    path("services/training_and_courses/", training_and_courses),
     path("admin/", admin.site.urls),
     path("test/", test),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

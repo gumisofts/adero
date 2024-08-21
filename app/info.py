@@ -62,24 +62,12 @@ services_list = [
         "link": "/services/software_services/",
     },
     {
-        "name": "IT Consultancy",
-        "link": "#",
-    },
-    {
         "name": "Education Consultancy",
         "link": "/services/education_consultancy/",
     },
     {
         "name": "Trainings and Courses",
-        "link": "#",
-    },
-    {
-        "name": "Social Media Marketing",
-        "link": "#",
-    },
-    {
-        "name": "Online Applications Processing",
-        "link": "#",
+        "link": "/services/training_and_courses/",
     },
 ]
 

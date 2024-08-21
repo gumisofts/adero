@@ -73,5 +73,16 @@
     {% endblock footer %}
     <script src={%static 'js/index.js'%} async defer></script>
     <script src="https://cdn.tailwindcss.com"></script>
+    {% if nav_index == 6 %}
+    <script src="https://www.google.com/recaptcha/enterprise.js" async defer></script>
+      <script>
+        function onClick(e) {
+          e.preventDefault();
+          grecaptcha.enterprise.ready(async () => {
+            const token = await grecaptcha.enterprise.execute('6LfuTSkqAAAAAKMShOGDePIIZDNlXroy7USDXUUL', {action: 'contact'});
+          });
+        }
+      </script>
+    {% endif %}
   </body>
 </html>
