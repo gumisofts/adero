@@ -201,6 +201,11 @@ def verfytoken(request):
 
         token = request.POST["token"]
 
+        valid = verify(token)
+
+        if valid:
+            cache.set(token, True, timeout=60 * 2)
+
         return JsonResponse({"status": verify(token)})
     return render(request, "app/contact_us.html")
 

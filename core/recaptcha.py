@@ -1,4 +1,5 @@
 from django.conf import settings
+from django.core.cache import cache
 import requests
 
 
@@ -21,5 +22,9 @@ def create_assessment(token):
 
 def verify(token):
     res = create_assessment(token)
+    print(res.json())
+
+    if cache.get(token):
+        return True
 
     return res.status_code == 200 and res.json()["tokenProperties"]["valid"]
