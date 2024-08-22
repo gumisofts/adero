@@ -75,17 +75,25 @@ function isElementInViewport(el) {
   );
 }
 
-// //////////////////////////////
+header = document.getElementById("header");
+let body=document.body;
+function onScroll(event) {
+
+  if (checkScrollDirectionIsUp(event)) {
+    header.classList.remove('-top-80');
+  } else {
+    header.classList.add('-top-80');
+  }
+}
+body.addEventListener('wheel',onScroll)
+
+var scrollableElement = document.body; //document.getElementById('scrollableElement');
 
 
-// let captcha_callback = async function (){
-//   let token = await grecaptcha.enterprise.execute('6LfuTSkqAAAAAKMShOGDePIIZDNlXroy7USDXUUL',{action:'CONTACT'});
 
-//   let status = await fetch(`/verifytoken/`,{method:"POST",body:JSON.stringify({token:token}),credentials:"same-origin"})
-
-//   let b=document.getElementById('bt-submit-contact-us');
-
-//   b.disbaled=status
-
-  
-// }
+function checkScrollDirectionIsUp(event) {
+  if (event.wheelDelta) {
+    return event.wheelDelta > 0;
+  }
+  return event.deltaY < 0;
+}
