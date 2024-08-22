@@ -75,3 +75,17 @@ function isElementInViewport(el) {
   );
 }
 
+// //////////////////////////////
+
+
+// let captcha_callback = async function (){
+//   let token = await grecaptcha.enterprise.execute('6LfuTSkqAAAAAKMShOGDePIIZDNlXroy7USDXUUL',{action:'CONTACT'});
+
+//   let status = await fetch(`/verifytoken/`,{method:"POST",body:JSON.stringify({token:token}),credentials:"same-origin"})
+
+//   let b=document.getElementById('bt-submit-contact-us');
+
+//   b.disbaled=status
+
+  
+// }

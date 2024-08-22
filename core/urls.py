@@ -15,6 +15,7 @@ urlpatterns = [
     path("services/software_services/", softawre_service),
     path("services/education_consultancy/", education_consultancy),
     path("services/training_and_courses/", training_and_courses),
+    path("verifytoken/", verfytoken),
     path("admin/", admin.site.urls),
     path("test/", test),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

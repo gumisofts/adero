@@ -13,7 +13,13 @@ SECRET_KEY = "django-insecure-b)8c^$6#(_16)_n@)kel+=8y-^_2wnkgfjtv1yb$qc9=kg=&&n
 
 DEBUG = True
 
-ALLOWED_HOSTS = ["localhost", "adero.gumiapps.com", "adero.tech", "192.168.0.109"]
+ALLOWED_HOSTS = [
+    "localhost",
+    "127.0.0.1",
+    "adero.gumiapps.com",
+    "adero.tech",
+    "192.168.0.109",
+]
 
 AUTH_USER_MODEL = "app.User"
 

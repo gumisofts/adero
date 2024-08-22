@@ -11,6 +11,8 @@ from django.template.loader import render_to_string
 from core.mail import *
 from core.recaptcha import *
 
+from django.http import JsonResponse
+
 
 class NavigationItem:
     def __init__(self, name, link) -> None:
@@ -29,6 +31,7 @@ context = {
     "services_list": info.services_list,
     "services": info.services,
     "nav_items": nav_items,
+    "settings": settings,
 }
 
 
@@ -188,6 +191,18 @@ def training_and_courses(request):
 
 def test(request):
     return render(request, "app/index2.html")
+
+
+def verfytoken(request):
+
+    if request.method == "POST":
+
+        print(request.POST)
+
+        token = request.POST["token"]
+
+        return JsonResponse({"status": verify(token)})
+    return render(request, "app/contact_us.html")
 
 
 # Softaware Services

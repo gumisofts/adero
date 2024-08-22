@@ -145,11 +145,12 @@
 					value={{form.data.message}}
 				></textarea>
 			</div>
-			<div class="g-recaptcha" data-sitekey="6LfuTSkqAAAAAKMShOGDePIIZDNlXroy7USDXUUL" data-action="CONTACT"></div>
+			<div class="g-recaptcha" data-sitekey={{settings.RE_CAPTCHA_SITE_KEY}} data-callback="captcha__callback" data-action="CONTACT"></div>
 			<br>
 			<button
-				type="submit"
-				class="bg-cyan-700 p-2 rounded-md text-white place-self-start"
+				type="submit" 
+				id="bt-submit-contact-us"
+				class="bg-cyan-700 p-2 rounded-md text-white place-self-start" disabled
 			>
 				Send message
 			</button>
@@ -197,3 +198,34 @@
 </section>
 
 {% endblock content %}
+
+{% block script %}  
+    <script src={%static 'js/index.js'%} async defer></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://www.google.com/recaptcha/enterprise.js" async defer></script>   
+
+	<script>
+		
+
+async function captcha__callback (){
+	// let token = await grecaptcha.enterprise.execute('{{settings.RE_CAPTCHA_SITE_KEY}}',{action:'CONTACT'});
+
+	let token= grecaptcha.enterprise.getResponse();
+	
+	let formData=new FormData();
+	formData.append('token',token)
+  
+	let response = await fetch('/verifytoken/',{method:"POST",body:formData,credentials:"same-origin",headers: { "X-CSRFToken": '{{csrf_token}}'},})
+	let js_res=await response.json()
+	
+	let b=document.getElementById('bt-submit-contact-us');
+
+  
+	b.disabled=!js_res.status;
+
+  
+	
+  }
+	</script>
+{% endblock script %}
+
