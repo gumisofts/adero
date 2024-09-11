@@ -1,0 +1,22 @@
+{% load static %}
+<section class="w-screen mt-6 mb-6 snap-always snap-center">
+    <div class="text-center">
+        <h1 class="font-medium text-4xl ">Top <span class="underline">Destinations</span> </h1>
+        <p class="">Choose from top destinations for our students</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 justify-items-center mt-6 mb-6 justify-center">
+        <div class="border border-black p-4 rounded-lg">
+            <img src={%static 'images/united-states.png'%} alt="" class="w-48 h-48 object-contain  rounded-full">
+            <h1 class="font-medium text-center">USA</h1>
+        </div>
+        <div class="border border-black p-4 rounded-lg">
+                <img src={%static 'images/canadian-flag.jfif'%} alt="" class="w-48 h-48 object-contain  rounded-full">
+            <h1 class="font-medium text-center">Canada</h1>
+        </div>
+        <div class="border border-black p-4 rounded-lg">
+                <img src={%static 'images/australian-flag.jfif'%} alt="" class="w-48 h-48 object-contain  rounded-full">
+            <h1 class="font-medium text-center">Australia</h1>
+        </div>
+    </div>
+</section>
