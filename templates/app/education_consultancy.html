@@ -1,8 +1,15 @@
 {% extends "base.html" %}
 
 {% block content %}
-<section class="">
-    
+<section class="snap-center snap-always flex flex-col justify-evenly items-center text-center font-medium text-secondary bg-[url('/staticfiles/images/bg-straps.svg')] bg-no-repeat bg-cover h-full pt-24">
+
+    <div class="flex flex-col gap-4">
+
+        <h1 class="text-4xl">Study  your dream <span class="text-primary">Major</span> at your dream <span class="text-primary">Country</span></h1>
+        
+        <p class="text-2xl">Let us take care of your worries with our <span class="underline text-primary"> Expert Guidance </span>unlocking Limitless Possibilities.</p>
+    </div>
+<a href="/contact_us/" class="bg-primary p-4 rounded text-white hover:scale-105 duration-300">Let Adero Help you</a>
 </section>
 
 {% include "parts/_edu_how_do_it.html" %}
