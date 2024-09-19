@@ -10,7 +10,7 @@ from django.template.loader import render_to_string
 
 from core.mail import *
 from core.recaptcha import *
-
+from .utils import *
 from django.http import JsonResponse
 
 
@@ -208,6 +208,21 @@ def verfytoken(request):
 
         return JsonResponse({"status": verify(token)})
     return render(request, "app/contact_us.html")
+
+
+def test(request):
+
+    data = render_md("#data")
+
+    return render(request, "app/blog/test.html", context={"content": data})
+
+
+def blog(request):
+    return render(
+        request,
+        "app/blog/home.html",
+        context={**context, "blogs": Blog.objects.filter(publish=True)},
+    )
 
 
 # Softaware Services

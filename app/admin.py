@@ -19,7 +19,13 @@ class PositionAdmin(admin.ModelAdmin):
     list_display = ["title", "description"]
 
 
+class BlogAdmin(admin.ModelAdmin):
+    list_display = ["title", "subtitle"]
+    list_filter = ["published_by", "created_at"]
+
+
 admin.site.register(User, UserAdmin)
+admin.site.register(Blog, BlogAdmin)
 admin.site.register(Message, MessageAdmin)
 admin.site.register(Position, PositionAdmin)
 admin.site.register(Service, ServiceAdmin)

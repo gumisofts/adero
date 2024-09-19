@@ -128,7 +128,7 @@ EMAIL_HOST_PASSWORD = env("EMAIL_PASSWORD")
 
 ADMINS = (("Nurad", "nuradhussen082@gmail.com"),)
 MANAGERS = (
-    ("Nurad", "nuradhussen082@gmail.com"),
+    # ("Nurad", "nuradhussen082@gmail.com"),
     ("Yayha", "contact@adero.tech"),
 )
 

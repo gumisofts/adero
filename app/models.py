@@ -94,6 +94,23 @@ class Message(models.Model):
     )
 
 
+class Blog(models.Model):
+    title = models.CharField(max_length=255)
+    subtitle = models.CharField(max_length=255)
+    content = models.TextField()
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+    published_by = models.ForeignKey(User, on_delete=models.PROTECT)
+    catagory = models.CharField(max_length=255, null=True)
+
+    publish = models.BooleanField(default=False)
+
+    def upload_to(self, filename):
+        return "blogs/" + filename
+
+    cover_img = models.ImageField(upload_to=upload_to, null=True)
+
+
 @receiver([post_save], sender=Message)
 def send_email_when_message_is_rececived(instance, created, sender, **extra_fields):
     if created:
