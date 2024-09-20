@@ -22,13 +22,21 @@ faqs = [
 ]
 
 services = [
+    # {
+    #     "service": "Social Media Marketing",
+    #     "description": """We will give you the most effective solution for your marketing efforts on social media. For instance, we can assist with advertising your business, creating a distinctive logo for your company, and enhancing the engagement of your social media platforms.""",
+    # },
     {
-        "service": "Social Media Marketing",
-        "description": """We will give you the most effective solution for your marketing efforts on social media. For instance, we can assist with advertising your business, creating a distinctive logo for your company, and enhancing the engagement of your social media platforms.""",
+        "service": "Software development",
+        "description": """Aderoo Tech specialises in software development, website design, and application development. Our goal is to elevate your organisation and individuals to the highest level of online presence.""",
+        "image": "",
+        "link": "/services/software_services/",
     },
     {
         "service": "Education consultant ",
         "description": """As it has been our professional endeavour from the beginning, we have assisted a significant number of Ethiopian students, as well as students from other African countries, in obtaining education consulting and assistance in locating scholarships. We have also provided them with a great number of genuine scholarship links and assisted them in travelling to other countries to study.""",
+        "image": "",
+        "link": "/services/education_consultancy/",
     },
     # {
     #     "service": "Brand Identity Design",
@@ -38,23 +46,19 @@ services = [
     #     "service": "Online Reputation Management",
     #     "description": """We will help you improve your online reputation by increasing your visibility and engagement on social media. Our experts will work with you to develop a strategy for increasing your online visibility and driving more traffic to your business.""",
     # },
-    {
-        "service": "Digital Marketing",
-        "description": """We will help you leverage the power of digital marketing to increase your brand's visibility and reach. Our team of experts will work with you to create a customized digital strategy that drives results for your business.""",
-    },
-    {
-        "service": "Search Engine Optimization (SEO)",
-        "description": """We will help you improve your website's visibility on search engines by implementing optimal SEO strategies. Our experts will work with you to create a customized SEO strategy that drives results for your business.""",
-        "description": """We will give you the most effective solution for your marketing efforts on social media. For instance, we can assist with advertising your business, creating a distinctive logo for your company, and enhancing the engagement of your social media platforms.""",
-    },
-    {
-        "service": "Software development",
-        "description": """Aderoo Tech specialises in software development, website design, and application development. Our goal is to elevate your organisation and individuals to the highest level of online presence.""",
-    },
-    {
-        "service": "IT consultancy",
-        "description": """Our company offers IT consulting services. Experts in information technology (IT) who advise businesses on technological matters may suggest new hardware, software, and hardware components depending on the specific requirements of their clients.""",
-    },
+    # {
+    #     "service": "Digital Marketing",
+    #     "description": """We will help you leverage the power of digital marketing to increase your brand's visibility and reach. Our team of experts will work with you to create a customized digital strategy that drives results for your business.""",
+    # },
+    # {
+    #     "service": "Search Engine Optimization (SEO)",
+    #     "description": """We will help you improve your website's visibility on search engines by implementing optimal SEO strategies. Our experts will work with you to create a customized SEO strategy that drives results for your business.""",
+    #     "description": """We will give you the most effective solution for your marketing efforts on social media. For instance, we can assist with advertising your business, creating a distinctive logo for your company, and enhancing the engagement of your social media platforms.""",
+    # },
+    # {
+    #     "service": "IT consultancy",
+    #     "description": """Our company offers IT consulting services. Experts in information technology (IT) who advise businesses on technological matters may suggest new hardware, software, and hardware components depending on the specific requirements of their clients.""",
+    # },
 ]
 services_list = [
     {

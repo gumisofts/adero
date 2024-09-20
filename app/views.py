@@ -39,10 +39,7 @@ def home(request):
     return render(
         request,
         "app/index.html",
-        context={
-            "nav_index": 1,
-            **context,
-        },
+        context={"nav_index": 1, **context},
     )
 
 
