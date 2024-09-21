@@ -3764,6 +3764,16 @@ video {
     --tw-text-opacity: 1;
     color: rgb(0 0 0 / var(--tw-text-opacity));
   }
+
+  .lg\:text-secondary {
+    --tw-text-opacity: 1;
+    color: rgb(2 48 71 / var(--tw-text-opacity));
+  }
+
+  .lg\:text-primary {
+    --tw-text-opacity: 1;
+    color: rgb(33 158 188 / var(--tw-text-opacity));
+  }
 }
 
 @media (min-width: 1280px) {
