@@ -183,7 +183,7 @@ def education_consultancy(request):
 
 
 def training_and_courses(request):
-    return render(request, "app/training_and_courses.html", context={**context})
+    return render(request, "app/courses/index.html", context={**context})
 
 
 def test(request):

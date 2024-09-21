@@ -38,6 +38,12 @@ services = [
         "image": "",
         "link": "/services/education_consultancy/",
     },
+    {
+        "service": "Training and Courses",
+        "description": """Aderoo Tech connects individuals with highly skilled professionals worldwide, offering online education focused on generating income through online platforms. Our commitment is to consistently provide the most impactful courses that have the potential to transform lives.""",
+        "image": "",
+        "link": "/services/training_and_courses/",
+    },
     # {
     #     "service": "Brand Identity Design",
     #     "description": """We will help you define your brand identity by creating a consistent and memorable design for your business. Our designers will work with you to create a brand identity that reflects your values and values your customers.""",
