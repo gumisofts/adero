@@ -12,6 +12,7 @@
       name="description"
       content="Aderoo Tech is an East African internet company headquartered in Addis Ababa, Ethiopia. This organisation encompasses the entirety of the digital realm and all things online-related. From completing passport applications to large scale Softwares, Aderoo technology encompasses everything digital and online."
     />
+    
     <link rel="apple-touch-icon" sizes="180x180" href={%static "images/fav/apple-touch-icon.png"%}>
     <link rel="icon" type="image/png" sizes="32x32" href={%static "images/fav/favicon-32x32.png"%}>
     <link rel="icon" type="image/png" sizes="16x16" href={%static "images/fav/favicon-16x16.png"%}>
@@ -37,14 +38,7 @@
     </style>
   </head>
   <body class="mt-0 ml-0 pt-18 h-screen snap-y snap-mandatory overflow-y-auto overflow-x-hidden" id="body" style="display:none">
-    <script type="text/javascript">
-      
-      window.onload = function () {
-          setTimeout(function() {
-              document.getElementById("body").style.display = "";        
-          }, 200);
-      }
-  </script>
+    
     <!--[if lt IE 7]>
       <p class="browsehappy">
         You are using an <strong>outdated</strong> browser. Please
@@ -74,6 +68,14 @@
 
     {% block script %}  
     <script src={%static 'js/index.js'%} async defer></script>
+    <script type="text/javascript">
+      
+      window.onload = function () {
+          setTimeout(function() {
+              document.getElementById("body").style.display = "";        
+          }, 300);
+      }
+  </script>
     {% endblock script %}
   </body>
 </html>
