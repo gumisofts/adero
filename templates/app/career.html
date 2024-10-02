@@ -3,7 +3,9 @@
     <h1 class="text-4xl font-semibold text-white text-center">Work in AderoTech</h1>
 </section>
 <section class="p-6 flex flex-col justify-center items-center snap-always snap-start">
-	<h1 class="text-4xl text-secondary font-bold">Open positions</h1>
+	{% if open_positions|length != 0 %}
+	<h1 class="text-4xl font-bold text-primary">Open positions</h1>
+	{% endif %}
 	
 </section>
 
@@ -12,7 +14,7 @@
 
 	{% if open_positions|length == 0  %}
 
-	<h1 class="text-4xl font-bold ">No Open Positions Currently</h1>
+	<h1 class="text-2xl md:text-4xl font-bold text-primary text-center py-12">No Open Positions Currently</h1>
 
 	{% else %}
 	

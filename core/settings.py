@@ -18,6 +18,7 @@ ALLOWED_HOSTS = [
     "127.0.0.1",
     "adero.gumiapps.com",
     "adero.tech",
+    "www.adero.tech",
     "192.168.0.109",
 ]
 
