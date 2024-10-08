@@ -201,14 +201,15 @@
 
 {% block script %}  
     <script src={%static 'js/index.js'%} async defer></script>
-    <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://www.google.com/recaptcha/enterprise.js" async defer></script>   
 
 	<script>
-		
-
-async function captcha__callback (){
-	// let token = await grecaptcha.enterprise.execute('{{settings.RE_CAPTCHA_SITE_KEY}}',{action:'CONTACT'});
+	window.onload = function () {
+			setTimeout(function() {
+				document.getElementById("body").style.display = "";        
+			}, 300);
+		}
+	async function captcha__callback (){
 
 	let token= grecaptcha.enterprise.getResponse();
 	
