@@ -23,7 +23,7 @@ ALLOWED_HOSTS = [
     "adero.tech",
     "www.adero.tech",
     "192.168.0.109",
-    ".vercel.com",
+    ".vercel.app",
 ]
 
 AUTH_USER_MODEL = "app.User"
