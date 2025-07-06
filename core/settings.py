@@ -1,14 +1,17 @@
 from pathlib import Path
 import os
 from dotenv import load_dotenv
+from urllib.parse import urlparse, parse_qsl
 
-load_dotenv()
+load_dotenv(override=True)
 
 env = os.environ.get
+
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 LOCAL_DEV = env("LOCAL_DEV")
-SECRET_KEY = "django-insecure-b)8c^$6#(_16)_n@)kel+=8y-^_2wnkgfjtv1yb$qc9=kg=&&n"
+
+SECRET_KEY = env("SECRET_KEY")
 
 
 DEBUG = True
@@ -20,6 +23,7 @@ ALLOWED_HOSTS = [
     "adero.tech",
     "www.adero.tech",
     "192.168.0.109",
+    ".vercel.com",
 ]
 
 AUTH_USER_MODEL = "app.User"
@@ -73,13 +77,20 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = "core.wsgi.application"
+# Replace the DATABASES section of your settings.py with this
+tmpPostgres = urlparse(os.getenv("DATABASE_URL"))
 
 
 DATABASES = {
     "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
-    }
+        "ENGINE": "django.db.backends.postgresql",
+        "NAME": tmpPostgres.path.replace("/", ""),
+        "USER": tmpPostgres.username,
+        "PASSWORD": tmpPostgres.password,
+        "HOST": tmpPostgres.hostname,
+        "PORT": 5432,
+        "OPTIONS": dict(parse_qsl(tmpPostgres.query)),
+    },
 }
 
 
@@ -108,7 +119,7 @@ USE_I18N = True
 USE_TZ = True
 
 STATICFILES_DIRS = [
-    BASE_DIR / "static",
+    BASE_DIR / "staticfiles",
 ]
 STATIC_URL = env("STATIC_URL")
 STATIC_ROOT = env("STATIC_ROOT")
@@ -128,10 +139,7 @@ EMAIL_HOST_USER = env("EMAIL_USER")
 EMAIL_HOST_PASSWORD = env("EMAIL_PASSWORD")
 
 ADMINS = (("Nurad", "nuradhussen082@gmail.com"),)
-MANAGERS = (
-    # ("Nurad", "nuradhussen082@gmail.com"),
-    ("Yayha", "contact@adero.tech"),
-)
+MANAGERS = (("Yayha", "contact@adero.tech"),)
 
 RE_CAPTCHA_SITE_KEY = env("RE_CAPTCHA_SITE_KEY")
 RE_CAPTCHA_SECRET = env("RE_CAPTCHA_SECRET")
