@@ -2,7 +2,7 @@
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
-{%load compress%} {% load static %}
+{% load static %}
 <html class="prevent-select scroll-smooth h-screen snap-y snap-mandatory overflow-y-auto light">
   <head>
     <meta charset="utf-8" />
@@ -21,9 +21,8 @@
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
 
-    {%compress css%}
+
     <link rel="stylesheet" href="{% static 'css/output.css' %}" />
-    {%endcompress%}
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     
     <style>

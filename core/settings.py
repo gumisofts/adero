@@ -51,7 +51,7 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = "core.urls"
 
-COMPRESS_ROOT = env("STATIC_ROOT", "static")
+# COMPRESS_ROOT = env("STATIC_ROOT", "static")
 
 COMPRESS_ENABLED = True
 
